@@ -1,0 +1,14 @@
+/* TEAM */
+Chef developer: ahomiya.com
+Contact: hello (at) ahomiya.com
+Website: www.ahomiya.com
+Twitter: @ahomiyadesu
+From: Chiang Rai, Thailand
+         
+/* SITE */
+Last update: 2014/06/08
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3/SASS, JavaScript/jQuery,
+Libraries: Modernizr, jQuery
+Software: OS X Maverics, Sublime Text, Atom, Transmit, MAMP, Photoshop
