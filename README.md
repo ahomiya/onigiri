@@ -1,8 +1,10 @@
 # [onigiri](https://github.com/ahomiya/onigiri)
 
+おにぎり (onigiri) also known as rice ball, is a Japanese food made from white rice formed into triangular or oval shapes and often wrapped in nori (seaweed).
+
 おにぎり (onigiri) is a professional front-end template for building scalable and maintainable web apps or sites.
 
-This project is made by ahomiya.com in Chiang Mai, Thailand.
+This project is maintained and funded by [ahomiya.com](http://www.ahomiya.com) in Chiang Mai, Thailand.
 
 * Source: [https://github.com/ahomiya/onigiri](https://github.com/ahomiya/onigiri)
 * Homepage: [http://www.ahomiya.com](http://www.ahomiya.com)
