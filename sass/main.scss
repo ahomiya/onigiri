@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/**
+ * Project             								: Project name
+ * Type																: Website
+ * CSS architecture										: SMACSS, MVCSS, OOCSS
+ * CSS preprocessor         					: SASS
+ * CSS resets, normalize  						: Reset.css, Normalize.css
+ * CSS authoring frameworks 					: Compass, ahomiya.com
+ * JS features detection    					: Modernizr
+ * Layouts                  					: Responsive Web Design
+ * Design approach										: Mobile first
+ * Media                    					: Desktops, tablets, mobiles
+ * Pixel density											: 1-2
+ * Section                  					: Main
+ * Developers               					: ahomiya.com
+ */
+
+// -----------------------------------------------------------------------------
+// CSS AUTHORING FRAMEWORKS
+// Streamlines development by providing a number of utilities and tools
+// to make writing CSS files easier and faster.
+
+// Imports
+@import "imports";										// Import settings
+
+// Compass
+@import "compass";
+// -----------------------------------------------------------------------------
+// CORE
+
+@import "core/reset";									// Reset
+@import "core/settings";							// Settings
+@import "core/helpers";								// Helpers
+@import "core/base";									// Base-level styles
+@import "core/content";								// Content
+@import "core/layout";								// Layout
+// -----------------------------------------------------------------------------
+// MODULES
+
+@import "modules/modules";						// Modules
+@import "modules/widgets";      			// Widgets
+@import "modules/components";					// Components
+// -----------------------------------------------------------------------------
+// PAGES
+
+@import "pages/master";								// Master template
+// -----------------------------------------------------------------------------
+// QUICK STYLES
+
+@import "inbox";											// Inbox
