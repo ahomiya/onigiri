@@ -72,4 +72,13 @@ a {
 	text-decoration: none;
 	@include transition(all 0.25s ease-in-out);
 }
-
+// -----------------------------------------------------------------------------
+// Pseudo-elements
+::-moz-selection {
+  background: $color-selection;
+  text-shadow: none;
+}
+::selection {
+  background: $color-selection;
+  text-shadow: none;
+}
