@@ -1,5 +1,5 @@
 /**
- * Project             			: Project name
+ * Project                  : Project name
  * Type                     : Website
  * JS libraries             : jQuery
  * JS features detection    : Modernizr
