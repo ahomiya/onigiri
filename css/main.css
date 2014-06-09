@@ -485,7 +485,12 @@ th {
 }
 
 html {
-  -webkit-text-size-adjust: none;
+  font-family: Font-Regular;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
 }
@@ -493,31 +498,7 @@ html {
 body {
   background-color: white;
   color: #666666;
-  font-family: Font-Regular;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: normal;
   line-height: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-  margin: 0;
-}
-
-img {
-  vertical-align: middle;
-}
-
-b,
-strong {
-  font-family: Font-Bold;
-  font-style: normal;
-  font-weight: normal;
-}
-
-small {
-  font-size: 100%;
 }
 
 a {
@@ -527,6 +508,60 @@ a {
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  margin: 0;
+}
+
+b,
+strong,
+i,
+em {
+  font-style: normal;
+  font-weight: normal;
+}
+
+b,
+strong {
+  font-family: Font-Bold;
+}
+
+i,
+em {
+  font-family: Font-Italic;
+}
+
+small {
+  font-size: 100%;
+}
+
+mark {
+  background-color: transparent;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+table {
+  background-color: transparent;
+  max-width: 100%;
+}
+
+th {
+  text-align: left;
 }
 
 ::-moz-selection {
