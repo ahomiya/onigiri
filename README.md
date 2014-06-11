@@ -1,6 +1,6 @@
 # [onigiri](https://github.com/ahomiya/onigiri)
 
-[![onigiri](https://raw.githubusercontent.com/ahomiya/onigiri/master/doc/img/project.png)](https://github.com/ahomiya/onigiri)
+[![onigiri](https://raw.githubusercontent.com/ahomiya/onigiri/master/doc/img/onigiri.png)](https://github.com/ahomiya/onigiri)
 
 おにぎり (onigiri) also known as rice ball, is a Japanese food made from white rice formed into triangular or oval shapes and often wrapped in nori (seaweed). [Wikipedia](http://en.wikipedia.org/wiki/Onigiri)
 
