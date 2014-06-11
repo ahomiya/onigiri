@@ -21,13 +21,13 @@
 // to make writing CSS files easier and faster.
 
 // Imports
-@import "imports";                    // Import settings
+@import "imports";                    // Import configuration settings
 
 // Compass
-@import "compass";
+@import "compass";                    // Core framework
 
 // ahomiya.com
-@import "vendor/ahomiya";
+@import "vendor/sukiyaki";            // Function and mixin library
 // -----------------------------------------------------------------------------
 // CORE
 
