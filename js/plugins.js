@@ -28,14 +28,15 @@
   }
 }());
 // -----------------------------------------------------------------------------
-// ahomiya.com
-// https://github.com/ahomiya/web.frontend.jquery.utilities
+// Wasabi
+// A collection of useful jQuery Utilities
+// https://github.com/ahomiya/wasabi
 
 // Exists
 // Check if element exists
 $.fn.exists = function(callback) {
   var args = [].slice.call(arguments, 1);
-  
+
   if(this.length) {
     callback.call(this, args);
   }
@@ -45,7 +46,7 @@ $.fn.exists = function(callback) {
 
 // Has attribute
 // Determine whether any of the matched elements are assigned the given attribute.
-$.fn.hasAttr = function(name) {  
+$.fn.hasAttr = function(name) {
   return this.attr(name) !== undefined;
 };
 
@@ -54,8 +55,9 @@ $.fn.hasAttr = function(name) {
 // Determine whether any of the matched elements are assigned the given classes.
 $.fn.hasClasses = function(selectors) {
   for (var i in selectors) {
-    if($(this).hasClass(selectors[i]));
-    return true;
+    if($(this).hasClass(selectors[i])) {
+      return true;
+    }
   }
   return false;
 };
