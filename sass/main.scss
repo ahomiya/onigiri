@@ -2,16 +2,17 @@
 /**
  * Project                            : Project name
  * Type                               : Website
- * CSS architecture                   : SMACSS, MVCSS, OOCSS
  * CSS preprocessor                   : SASS
+ * CSS architecture                   : SMACSS, MVCSS, OOCSS
+ * CSS authoring frameworks           : Compass, Sukiyaki, Itadakimasu, Tadaima
  * CSS resets, normalize              : Reset.css, Normalize.css
- * CSS authoring frameworks           : Compass, ahomiya.com
  * JS features detection              : Modernizr
+ * Front-end template                 : Onigiri
  * Layouts                            : Responsive Web Design
  * Design approach                    : Mobile first
  * Media                              : Desktops, tablets, mobiles
- * Pixel density                      : 1-2
- * Section                            : Main
+ * Pixel density                      : 1-2 dppx
+ * Section                            : Main styles
  * Developers                         : ahomiya.com
  */
 
@@ -20,14 +21,13 @@
 // Streamlines development by providing a number of utilities and tools
 // to make writing CSS files easier and faster.
 
-// Imports
 @import "imports";                    // Import configuration settings
 
-// Compass
 @import "compass";                    // Core framework
 
-// ahomiya.com
 @import "vendor/sukiyaki";            // Function and mixin library
+@import "vendor/itadakimasu";         // A set of responsive SASS modules
+@import "vendor/omuraisu";            // Prepackaged patterns and components
 // -----------------------------------------------------------------------------
 // CORE
 
