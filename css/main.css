@@ -1,16 +1,17 @@
 /**
  * Project                            : Project name
  * Type                               : Website
- * CSS architecture                   : SMACSS, MVCSS, OOCSS
  * CSS preprocessor                   : SASS
+ * CSS architecture                   : SMACSS, MVCSS, OOCSS
+ * CSS authoring frameworks           : Compass, Sukiyaki, Itadakimasu, Omuraisu
  * CSS resets, normalize              : Reset.css, Normalize.css
- * CSS authoring frameworks           : Compass, ahomiya.com
  * JS features detection              : Modernizr
+ * Front-end template                 : Onigiri
  * Layouts                            : Responsive Web Design
  * Design approach                    : Mobile first
  * Media                              : Desktops, tablets, mobiles
- * Pixel density                      : 1-2
- * Section                            : Main
+ * Pixel density                      : 1-2 dppx
+ * Section                            : Main styles
  * Developers                         : ahomiya.com
  */
 /* http://meyerweb.com/eric/tools/css/reset/ 
