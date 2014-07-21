@@ -4,7 +4,7 @@
  * Type                               : Website
  * CSS preprocessor                   : SASS
  * CSS architecture                   : SMACSS, MVCSS, OOCSS
- * CSS authoring frameworks           : Compass, Sukiyaki, Itadakimasu, Omuraisu
+ * CSS authoring frameworks           : Compass, Sukiyaki
  * CSS resets, normalize              : Reset.css, Normalize.css
  * JS features detection              : Modernizr
  * Front-end template                 : Onigiri
@@ -26,8 +26,6 @@
 @import "compass";                    // Core framework
 
 @import "vendor/sukiyaki";            // Function and mixin library
-@import "vendor/itadakimasu";         // A set of responsive SASS modules
-@import "vendor/omuraisu";            // Prepackaged patterns and components
 // -----------------------------------------------------------------------------
 // CORE
 
