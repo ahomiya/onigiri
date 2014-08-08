@@ -18,7 +18,7 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 
 ## Features
 
-* HTML5, CSS3 (SASS) and JavaScript (jQueru) ready.
+* HTML5, CSS3 (SASS) and JavaScript (jQuery) ready.
 * Cross-browser compatible (Safari, Chrome, Firefox, IE8+, Mobile Safari).
 * Includes [Reset.css](http://meyerweb.com/eric/tools/css/reset/) and [Normalize.css](http://necolas.github.com/normalize.css/) to define a consistent foundation across browsers to build the site on.
 * Includes the latest [jQuery](http://jquery.com/) via CDN, with a local fallback.
