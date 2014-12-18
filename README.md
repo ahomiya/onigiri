@@ -25,3 +25,4 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 * Includes the latest [Modernizr](http://modernizr.com/) build for feature detection.
 * Includes the latest [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
 * Useful SASS helpers.
+* Includes [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
