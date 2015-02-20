@@ -356,6 +356,10 @@ h6 {
   margin: 0;
 }
 
+p {
+  line-height: normal;
+}
+
 b,
 strong,
 i,
