@@ -38,6 +38,9 @@ a {
     color: $link-color-hover;
     text-decoration: underline;
   }
+  &:active {
+    color: $link-color-active;
+  }
 }
 // -----------------------------------------------------------------------------
 // Text-level semantics
