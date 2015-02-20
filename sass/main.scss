@@ -44,9 +44,11 @@
 @import "structure/layout";           // Layout
 // -----------------------------------------------------------------------------
 // COMPONENTS
+// The main functional units that display in template.
+// They can be seen as mini-applications.
 
-@import "components/components";      // Components
-@import "components/widgets";         // Widgets
+@import "components/component-1";
+@import "components/component-2";
 // -----------------------------------------------------------------------------
 // PAGES
 
