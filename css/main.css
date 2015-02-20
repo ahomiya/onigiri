@@ -324,8 +324,6 @@ html {
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
 }

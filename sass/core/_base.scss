@@ -4,6 +4,9 @@
 // in all occurrences on the page.
 // -----------------------------------------------------------------------------
 // Defaults
+
+// Tell the browser to consider border and padding as part of the width of
+// an object rather than as an addition.
 * {
 	&, &:before, &:after {
 		@include box-sizing(border-box);
@@ -17,8 +20,6 @@ html {
 		style: normal;
 		weight: normal;
 	}
-  -ms-text-size-adjust: 100%;                  // Text size adjustment
-  -webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;    // Tapping highlight
 	-webkit-font-smoothing: antialiased;
 }
