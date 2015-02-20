@@ -34,6 +34,10 @@ body {
 a {
 	color: $link-color-normal;
 	text-decoration: none;
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
 }
 // -----------------------------------------------------------------------------
 // Text-level semantics
