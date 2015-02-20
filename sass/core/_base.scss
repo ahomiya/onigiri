@@ -71,17 +71,21 @@ em {
 		weight: normal;
 	}
 }
+
 b,
 strong {
 	font-family: $font-style-bold;
 }
+
 i,
 em {
 	font-family: $font-style-italic;
 }
 
 small { font-size: 100%; }
+
 mark { background-color: transparent; }
+
 sup,
 sub {
 
@@ -92,8 +96,11 @@ ul,
 ol {
 	margin: 0
 }
+
 ul {}
+
 ol {}
+
 li {}
 // -----------------------------------------------------------------------------
 // Embedded content
@@ -106,10 +113,15 @@ hr {}
 // -----------------------------------------------------------------------------
 // Forms
 form {}
+
 button {}
+
 input {}
+
 select {}
+
 textarea {}
+
 legend {}
 // -----------------------------------------------------------------------------
 // Tables
@@ -117,6 +129,7 @@ table {
 	background-color: transparent;
 	max-width: 100%;
 }
+
 th { text-align: left; }
 // -----------------------------------------------------------------------------
 // Pseudo-elements
@@ -124,6 +137,7 @@ th { text-align: left; }
   background: $color-selection;
   text-shadow: none;
 }
+
 ::selection {
   background: $color-selection;
   text-shadow: none;
