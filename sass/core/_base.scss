@@ -34,7 +34,6 @@ body {
 a {
 	color: $link-color-normal;
 	text-decoration: none;
-	@include transition(all 0.25s ease-in-out);
 }
 // -----------------------------------------------------------------------------
 // Text-level semantics
