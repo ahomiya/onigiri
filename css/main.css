@@ -335,15 +335,15 @@ body {
 }
 
 a {
-  color: white;
+  color: #666666;
   text-decoration: none;
 }
 a:hover {
-  color: white;
+  color: black;
   text-decoration: underline;
 }
 a:active {
-  color: white;
+  color: black;
 }
 
 h1,
