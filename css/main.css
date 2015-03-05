@@ -353,7 +353,6 @@ h4,
 h5,
 h6 {
   line-height: normal;
-  margin: 0;
 }
 
 p {
@@ -384,11 +383,6 @@ small {
 
 mark {
   background-color: transparent;
-}
-
-ul,
-ol {
-  margin: 0;
 }
 
 img {
