@@ -17,13 +17,19 @@
  */
 
 // -----------------------------------------------------------------------------
-// CSS AUTHORING FRAMEWORKS
+// FRAMEWORKS
+
+// CSS authoring framework
 // Streamlines development by providing a number of utilities and tools
 // to make writing CSS files easier and faster.
+@import "compass";                    // Compass
 
-@import "imports";                    // Import configuration settings
-@import "compass";                    // Core framework
-@import "vendor/sukiyaki";            // Function and mixin library
+// Function and mixin libraries
+@import "vendor/sukiyaki";            // Sukiyaki
+
+// Front-end frameworks
+// A collection of tools for creating websites and web applications.
+@import "vendor";                     // Overriding
 // -----------------------------------------------------------------------------
 // CORE
 // Represents the tools and materials required at the ground level of a project.
@@ -44,15 +50,18 @@
 @import "structure/layout";           // Layout
 // -----------------------------------------------------------------------------
 // COMPONENTS
+// The main functional units that display in template.
+// They can be seen as mini-applications.
 
-@import "components/components";      // Components
-@import "components/widgets";         // Widgets
+@import "components/component-1";
+@import "components/component-2";
 // -----------------------------------------------------------------------------
 // PAGES
 
 @import "pages/master";               // Master template
 // -----------------------------------------------------------------------------
 // THEMES
+
 @import "themes/default";             // Default theme
 // -----------------------------------------------------------------------------
 // QUICK STYLES

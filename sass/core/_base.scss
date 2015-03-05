@@ -4,6 +4,9 @@
 // in all occurrences on the page.
 // -----------------------------------------------------------------------------
 // Defaults
+
+// Tell the browser to consider border and padding as part of the width of
+// an object rather than as an addition.
 * {
 	&, &:before, &:after {
 		@include box-sizing(border-box);
@@ -17,8 +20,6 @@ html {
 		style: normal;
 		weight: normal;
 	}
-  -ms-text-size-adjust: 100%;                  // Text size adjustment
-  -webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;    // Tapping highlight
 	-webkit-font-smoothing: antialiased;
 }
@@ -33,7 +34,13 @@ body {
 a {
 	color: $link-color-normal;
 	text-decoration: none;
-	@include transition(all 0.25s ease-in-out);
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $link-color-active;
+  }
 }
 // -----------------------------------------------------------------------------
 // Text-level semantics
@@ -45,12 +52,14 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1;
+	line-height: normal;
 	margin: 0;
 }
 
 // Body text
-p {}
+p {
+  line-height: normal;
+}
 
 // Emphasis & misc
 b,
@@ -62,17 +71,21 @@ em {
 		weight: normal;
 	}
 }
+
 b,
 strong {
 	font-family: $font-style-bold;
 }
+
 i,
 em {
 	font-family: $font-style-italic;
 }
 
 small { font-size: 100%; }
+
 mark { background-color: transparent; }
+
 sup,
 sub {
 
@@ -83,8 +96,11 @@ ul,
 ol {
 	margin: 0
 }
+
 ul {}
+
 ol {}
+
 li {}
 // -----------------------------------------------------------------------------
 // Embedded content
@@ -97,10 +113,15 @@ hr {}
 // -----------------------------------------------------------------------------
 // Forms
 form {}
+
 button {}
+
 input {}
+
 select {}
+
 textarea {}
+
 legend {}
 // -----------------------------------------------------------------------------
 // Tables
@@ -108,6 +129,7 @@ table {
 	background-color: transparent;
 	max-width: 100%;
 }
+
 th { text-align: left; }
 // -----------------------------------------------------------------------------
 // Pseudo-elements
@@ -115,6 +137,7 @@ th { text-align: left; }
   background: $color-selection;
   text-shadow: none;
 }
+
 ::selection {
   background: $color-selection;
   text-shadow: none;
