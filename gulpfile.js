@@ -59,7 +59,7 @@ var packages        = {
   // SASS frameworks
   sass_frameworks: {
     reset: [
-      packages + '/reset/index.css'                           // CSS reset
+      packages + '/reset-css/index.css'                       // CSS reset
     ],
     normalize: [
       packages + '/normalize-scss/_normalize.scss'            // CSS normalize

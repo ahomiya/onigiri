@@ -16,7 +16,7 @@
     "normalize-scss": "~3.0.3",
     "enquire": "~2.1.2",
     "matchMedia": "~0.2.0",
-    "reset": "http://meyerweb.com/eric/tools/css/reset/reset.css",
+    "reset-css": "http://meyerweb.com/eric/tools/css/reset/reset.css",
     "ahomiya.sukiyaki": "https://github.com/ahomiya/sukiyaki.git",
     "ahomiya.wasabi": "https://github.com/ahomiya/wasabi.git"
   }
