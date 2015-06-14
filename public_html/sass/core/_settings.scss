@@ -5,22 +5,22 @@
 // Fonts
 
 // Regular
-@include font-face(
-  "Font-Regular",
-  font-files("Caviar.Dreams-Regular.ttf")
-);
+@font-face {
+  font-family: "Font-Regular";
+  src: url("../fonts/Caviar.Dreams-Regular.ttf");
+}
 
 // Bold
-@include font-face(
-  "Font-Bold",
-  font-files("Caviar.Dreams-Bold.ttf")
-);
+@font-face {
+  font-family: "Font-Bold";
+  src: url("../fonts/Caviar.Dreams-Bold.ttf");
+}
 
 // Italic
-@include font-face(
-  "Font-Italic",
-  font-files("Caviar.Dreams-Italic.ttf")
-);
+@font-face {
+  font-family: "Font-Italic";
+  src: url("../fonts/Caviar.Dreams-Italic.ttf");
+}
 // -----------------------------------------------------------------------------
 // Configurable variables
 // Declar variables that can beused throughout stylesheets.
