@@ -39,6 +39,7 @@ var root            = {
 // -----------------------------------------------------------------------------
 // Packages
 var packages        = {
+
   // JavaScript libraries
   js_libraries: {
     core: [
@@ -71,7 +72,7 @@ var packages        = {
 };
 
 // -----------------------------------------------------------------------------
-// Build
+// Build tasks
 // Concatenating, minifying, and optimizing files
 
 // JavaScript libraries
@@ -114,7 +115,7 @@ gulp.task('sass.helpers', function() {
     .pipe(gulp.dest(root.sass.vendor));
 });
 // -----------------------------------------------------------------------------
-// Compiling
+// Compiling tasks
 
 // SASS
 gulp.task('sass', function() {
