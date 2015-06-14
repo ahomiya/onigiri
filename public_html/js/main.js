@@ -1,17 +1,16 @@
 /**
- * Project                  : Project name
- * Type                     : Website
- * JS libraries             : jQuery
- * JS features detection    : Modernizr
- * Developers               : ahomiya.com
+ * Project                    : Project name
+ * JavaScript libraries       : jQuery
+ * Features detection library : Modernizr
+ * Developers                 : ahomiya.com
  */
 
 // -----------------------------------------------------------------------------
 // Variables
-var $window                 = $(window),
-    $document               = $(document),
-    $html                   = $('html'),
-    $body                   = $('body');
+var $window                   = $(window),
+    $document                 = $(document),
+    $html                     = $('html'),
+    $body                     = $('body');
 // -----------------------------------------------------------------------------
 // Functions
 
