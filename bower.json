@@ -2,7 +2,7 @@
   "name": "ahomiya.com",
   "version": "1.0.0",
   "authors": [
-    "ahomiya.com <hello@ahomiya.com>",
+    "ahomiya.com <hello@ahomiya.com>"
   ],
   "ignore": [
     "**/.*",
@@ -13,10 +13,11 @@
   ],
   "dependencies": {
     "jquery": "2",
-    "sukiyaki": "https://github.com/ahomiya/sukiyaki.git",
     "normalize-scss": "~3.0.3",
     "enquire": "~2.1.2",
     "matchMedia": "~0.2.0",
-    "reset": "http://meyerweb.com/eric/tools/css/reset/reset.css"
+    "reset": "http://meyerweb.com/eric/tools/css/reset/reset.css",
+    "ahomiya.sukiyaki": "https://github.com/ahomiya/sukiyaki.git",
+    "ahomiya.wasabi": "https://github.com/ahomiya/wasabi.git"
   }
 }

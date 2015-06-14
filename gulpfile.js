@@ -43,7 +43,8 @@ var packages        = {
   js_libraries: {
     core: [
       packages + '/jquery/dist/jquery.js',                    // Library
-      packages + '/enquire/dist/enquire.js'                   // Media queries
+      packages + '/enquire/dist/enquire.js',                  // Media queries
+      packages + '/ahomiya.wasabi/js/**/*'                    // Utilities
     ],
     features: [
       packages_custom + '/modernizr/modernizr.js'             // Feature detection
@@ -63,7 +64,7 @@ var packages        = {
       packages + '/normalize-scss/_normalize.scss'            // CSS normalize
     ],
     helpers: [
-      packages + '/sukiyaki/scss/**/*'                        // Function & mixin
+      packages + '/ahomiya.sukiyaki/scss/**/*'                // Function & mixin
     ]
   }
 
