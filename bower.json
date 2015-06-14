@@ -1,0 +1,23 @@
+{
+  "name": "Lynxon.com",
+  "version": "1.0.0",
+  "authors": [
+    "ME <me@ahomiya.com>",
+    "Kaowfang <kaowfang@ahomiyacom>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2",
+    "sukiyaki": "https://github.com/ahomiya/sukiyaki.git",
+    "normalize-scss": "~3.0.3",
+    "meyer-reset": "https://github.com/adamstac/meyer-reset.git",
+    "enquire": "~2.1.2",
+    "matchMedia": "~0.2.0"
+  }
+}
