@@ -20,6 +20,19 @@ var $window                   = $(window),
 // Specify a function to execute when the DOM is fully loaded.
 $document.ready(function() {
 
+  // Media queries
+  enquire.register('screen and (min-width: 768px)', {
+    setup   : function() {
+      console.log('Media query : Desktop / Set up');
+    },
+    match   : function() {
+      console.log('Media query : Desktop');
+    },
+    unmatch : function() {
+      console.log('Media query : Mobile');
+    }
+  });
+
   // Log
   console.log('DOM is fully loaded.');
 });
