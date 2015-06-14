@@ -33,6 +33,11 @@ $document.ready(function() {
     }
   });
 
+  // Existing element
+  $body.exists(function(event) {
+    console.log('Body element exists');
+  });
+
   // Log
   console.log('DOM is fully loaded.');
 });
