@@ -3,8 +3,8 @@
  * Project                            : Onigiri
  * Type                               : Website
  * CSS preprocessor                   : SASS
- * CSS architecture                   : SMACSS, MVCSS, OOCSS
- * CSS authoring frameworks           : Compass, Sukiyaki
+ * CSS architecture                   : SMACSS, MVCSS
+ * CSS authoring frameworks           : Sukiyaki
  * CSS resets / normalization         : Reset.css, Normalize.css
  * JS features detection              : Modernizr
  * Front-end template                 : Onigiri
@@ -12,7 +12,6 @@
  * Design approach                    : Mobile first
  * Media                              : Desktops, tablets, mobiles
  * Pixel density                      : 1-2 dppx
- * Section                            : Main styles
  * Developers                         : ahomiya.com
  */
 
@@ -22,7 +21,6 @@
 // CSS authoring framework
 // Streamlines development by providing a number of utilities and tools
 // to make writing CSS files easier and faster.
-@import "compass";                    // Compass
 
 // Function and mixin libraries
 @import "vendor/sukiyaki";            // Sukiyaki

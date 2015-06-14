@@ -56,6 +56,9 @@ var packages        = {
 
   // SASS frameworks
   sass_frameworks: {
+    reset: [
+      packages + '/reset/index.css'                           // CSS reset
+    ],
     normalize: [
       packages + '/normalize-scss/_normalize.scss'            // CSS normalize
     ],
@@ -92,7 +95,13 @@ gulp.task('js.polyfills', function() {
     .pipe(gulp.dest(root.js.vendor));
 });
 
-// SASS normalize
+// SASS reset & normalize
+gulp.task('sass.reset', function() {
+  return gulp.src(packages.sass_frameworks.reset)
+    .pipe(rename({prefix: '_', basename: 'reset', extname: '.scss'}))
+    .pipe(gulp.dest(root.sass.vendor));
+});
+
 gulp.task('sass.normalize', function() {
   return gulp.src(packages.sass_frameworks.normalize)
     .pipe(gulp.dest(root.sass.vendor));
@@ -167,6 +176,7 @@ gulp.task('js.library.build',
 // SASS frameworks
 gulp.task('sass.library.build',
   [
+    'sass.reset',        // Reset
     'sass.normalize',    // Normalize
     'sass.helpers'       // Function & mixin
   ]
