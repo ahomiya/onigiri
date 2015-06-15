@@ -1,17 +1,12 @@
 @charset "UTF-8";
 /**
  * Project                            : Onigiri
- * Type                               : Website
  * CSS preprocessor                   : SASS
- * CSS architecture                   : SMACSS, MVCSS
  * CSS authoring frameworks           : Sukiyaki
  * CSS resets / normalization         : Reset.css, Normalize.css
- * JS features detection              : Modernizr
+ * Features detection library         : Modernizr
  * Front-end template                 : Onigiri
- * Layouts                            : Responsive Web Design
  * Design approach                    : Mobile first
- * Media                              : Desktops, tablets, mobiles
- * Pixel density                      : 1-2 dppx
  * Developers                         : ahomiya.com
  */
 
@@ -53,14 +48,6 @@
 
 @import "components/component-1";
 @import "components/component-2";
-// -----------------------------------------------------------------------------
-// PAGES
-
-@import "pages/master";               // Master template
-// -----------------------------------------------------------------------------
-// THEMES
-
-@import "themes/default";             // Default theme
 // -----------------------------------------------------------------------------
 // QUICK STYLES
 

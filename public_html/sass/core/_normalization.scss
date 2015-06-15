@@ -2,10 +2,18 @@
 // A set of base styles designed to strip out—or reset—the default properties.
 // To define a consistent foundation across browsers to build the site on.
 // -----------------------------------------------------------------------------
+// Framework
 @import "vendor/reset";
 
+// Overriding
+
+
+// -----------------------------------------------------------------------------
 // NORMALIZATION
 // A set of styles provide better cross-browser consistency in the default
 // styling of HTML elements.
 // -----------------------------------------------------------------------------
+// Framework
 @import "vendor/normalize";
+
+// Overriding
