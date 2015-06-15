@@ -48,7 +48,8 @@ var packages        = {
       packages + '/ahomiya.wasabi/js/**/*'                    // Utilities
     ],
     features: [
-      packages_custom + '/modernizr/modernizr.js'             // Feature detection
+      packages_custom + '/modernizr/modernizr.js',            // Feature detection
+      packages + '/ua-parser-js/src/ua-parser.js'             // User-agent string parser
     ],
     polyfills: [
       packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
