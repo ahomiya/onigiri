@@ -38,6 +38,13 @@ $document.ready(function() {
     console.log('Body element exists');
   });
 
+  // Checking screen type
+  if(Modernizr.touch) {
+    console.log('Screen type : Touch');
+  } else {
+    console.log('Screen type : Standard');
+  }
+
   // Log
   console.log('DOM is fully loaded.');
 });
