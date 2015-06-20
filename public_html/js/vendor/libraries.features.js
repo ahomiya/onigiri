@@ -1,177 +1,3 @@
-/* Modernizr 2.8.3 (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-
- */
-;
-
-
-
-window.Modernizr = (function( window, document, undefined ) {
-
-    var version = '2.8.3',
-
-    Modernizr = {},
-
-
-    docElement = document.documentElement,
-
-    mod = 'modernizr',
-    modElem = document.createElement(mod),
-    mStyle = modElem.style,
-
-    inputElem  ,
-
-
-    toString = {}.toString,    tests = {},
-    inputs = {},
-    attrs = {},
-
-    classes = [],
-
-    slice = classes.slice,
-
-    featureName,
-
-
-
-    _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
-
-    if ( !is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined') ) {
-      hasOwnProp = function (object, property) {
-        return _hasOwnProperty.call(object, property);
-      };
-    }
-    else {
-      hasOwnProp = function (object, property) {
-        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
-      };
-    }
-
-
-    if (!Function.prototype.bind) {
-      Function.prototype.bind = function bind(that) {
-
-        var target = this;
-
-        if (typeof target != "function") {
-            throw new TypeError();
-        }
-
-        var args = slice.call(arguments, 1),
-            bound = function () {
-
-            if (this instanceof bound) {
-
-              var F = function(){};
-              F.prototype = target.prototype;
-              var self = new F();
-
-              var result = target.apply(
-                  self,
-                  args.concat(slice.call(arguments))
-              );
-              if (Object(result) === result) {
-                  return result;
-              }
-              return self;
-
-            } else {
-
-              return target.apply(
-                  that,
-                  args.concat(slice.call(arguments))
-              );
-
-            }
-
-        };
-
-        return bound;
-      };
-    }
-
-    function setCss( str ) {
-        mStyle.cssText = str;
-    }
-
-    function setCssAll( str1, str2 ) {
-        return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
-    }
-
-    function is( obj, type ) {
-        return typeof obj === type;
-    }
-
-    function contains( str, substr ) {
-        return !!~('' + str).indexOf(substr);
-    }
-
-
-    function testDOMProps( props, obj, elem ) {
-        for ( var i in props ) {
-            var item = obj[props[i]];
-            if ( item !== undefined) {
-
-                            if (elem === false) return props[i];
-
-                            if (is(item, 'function')){
-                                return item.bind(elem || obj);
-                }
-
-                            return item;
-            }
-        }
-        return false;
-    }
-    for ( var feature in tests ) {
-        if ( hasOwnProp(tests, feature) ) {
-                                    featureName  = feature.toLowerCase();
-            Modernizr[featureName] = tests[feature]();
-
-            classes.push((Modernizr[featureName] ? '' : 'no-') + featureName);
-        }
-    }
-
-
-
-     Modernizr.addTest = function ( feature, test ) {
-       if ( typeof feature == 'object' ) {
-         for ( var key in feature ) {
-           if ( hasOwnProp( feature, key ) ) {
-             Modernizr.addTest( key, feature[ key ] );
-           }
-         }
-       } else {
-
-         feature = feature.toLowerCase();
-
-         if ( Modernizr[feature] !== undefined ) {
-                                              return Modernizr;
-         }
-
-         test = typeof test == 'function' ? test() : test;
-
-         if (typeof enableClasses !== "undefined" && enableClasses) {
-           docElement.className += ' ' + (test ? '' : 'no-') + feature;
-         }
-         Modernizr[feature] = test;
-
-       }
-
-       return Modernizr;
-     };
-
-
-    setCss('');
-    modElem = inputElem = null;
-
-
-    Modernizr._version      = version;
-
-
-    return Modernizr;
-
-})(this, this.document);
-;
 /**
  * UAParser.js v0.7.7
  * Lightweight JavaScript-based User-Agent string parser
@@ -1035,3 +861,281 @@ window.Modernizr = (function( window, document, undefined ) {
     }
 
 })(this);
+
+// Tonkatsu User-agent Detection
+
+// Tonkatsu runs quickly on page load to detect features;
+// it then creates a JavaScript object with the results, and adds classes
+// to the html element
+
+// Require JavaScript-based User-Agent string parser
+// https://github.com/faisalman/ua-parser-js
+// -----------------------------------------------------------------------------
+// Configuration
+var parser = new UAParser(),
+    agent  = parser.getResult(),
+    html  = document.getElementsByTagName('html')[0];
+
+// -----------------------------------------------------------------------------
+// OS
+if(agent.os.name == 'Mac OS') {
+  html.className += 'OS-Mac';
+}
+
+if(agent.os.name == 'Windows') {
+  html.className += 'OS-Windows';
+}
+
+if(agent.os.name == 'iOS') {
+  html.className += 'OS-iOS';
+}
+
+if(agent.os.name == 'Android') {
+  html.className += 'OS-Android';
+}
+
+html.className += ' OS-' + agent.os.version;
+
+// -----------------------------------------------------------------------------
+// Browser
+if(agent.browser.name == 'Chrome') {
+  html.className += ' Browser-Chrome';
+}
+
+if(agent.browser.name == 'Safari' || agent.browser.name == 'Mobile Safari') {
+  html.className += ' Browser-Safari';
+}
+
+if(agent.browser.name == 'Firefox') {
+  html.className += ' Browser-Firefox';
+}
+
+if(agent.browser.name == 'IE') {
+  html.className += ' Browser-IE';
+  html.className += ' Browser-IE' + agent.browser.major;
+  if(agent.browser.major < 9) {
+    html.className += ' Browser-Legacy';
+  }
+}
+
+html.className += ' Browser-' + agent.browser.major;
+
+// Native Android Browser
+var navU = navigator.userAgent;
+var isAndroidMobile = navU.indexOf('Android') > -1 && navU.indexOf('Mozilla/5.0') > -1 && navU.indexOf('AppleWebKit') > -1;
+var regExAppleWebKit = new RegExp(/AppleWebKit\/([\d.]+)/);
+var resultAppleWebKitRegEx = regExAppleWebKit.exec(navU);
+var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navU)[1]));
+var regExChrome = new RegExp(/Chrome\/([\d.]+)/);
+var resultChromeRegEx = regExChrome.exec(navU);
+var chromeVersion = (resultChromeRegEx === null ? null : parseFloat(regExChrome.exec(navU)[1]));
+var isAndroidBrowser = isAndroidMobile && (appleWebKitVersion !== null && appleWebKitVersion >= 537) && (chromeVersion !== null && chromeVersion <= 35);
+
+if(isAndroidBrowser) {
+  html.className += ' Browser-Android';
+}
+
+// -----------------------------------------------------------------------------
+// Device
+if(agent.device.model == 'iPad') {
+  html.className += ' Device-iPad';
+}
+
+if(agent.device.model == 'iPhone') {
+  html.className += ' Device-iPhone';
+}
+
+if(agent.device.model == 'iPod') {
+  html.className += ' Device-iPod';
+}
+
+if(agent.device.model == 'GT-I9505') {
+  html.className += ' Device-S4';
+}
+
+if(agent.device.model == 'SM-G900F') {
+  html.className += ' Device-S5';
+}
+
+if(agent.device.type == 'tablet') {
+  html.className += ' Device-Tablet';
+}
+
+if(agent.device.type == 'mobile') {
+  html.className += ' Device-Mobile';
+}
+
+/* Modernizr 2.8.3 (Custom Build) | MIT & BSD
+ * Build: http://modernizr.com/download/#-
+ */
+;
+
+
+
+window.Modernizr = (function( window, document, undefined ) {
+
+    var version = '2.8.3',
+
+    Modernizr = {},
+
+
+    docElement = document.documentElement,
+
+    mod = 'modernizr',
+    modElem = document.createElement(mod),
+    mStyle = modElem.style,
+
+    inputElem  ,
+
+
+    toString = {}.toString,    tests = {},
+    inputs = {},
+    attrs = {},
+
+    classes = [],
+
+    slice = classes.slice,
+
+    featureName,
+
+
+
+    _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
+
+    if ( !is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined') ) {
+      hasOwnProp = function (object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
+    }
+    else {
+      hasOwnProp = function (object, property) {
+        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
+      };
+    }
+
+
+    if (!Function.prototype.bind) {
+      Function.prototype.bind = function bind(that) {
+
+        var target = this;
+
+        if (typeof target != "function") {
+            throw new TypeError();
+        }
+
+        var args = slice.call(arguments, 1),
+            bound = function () {
+
+            if (this instanceof bound) {
+
+              var F = function(){};
+              F.prototype = target.prototype;
+              var self = new F();
+
+              var result = target.apply(
+                  self,
+                  args.concat(slice.call(arguments))
+              );
+              if (Object(result) === result) {
+                  return result;
+              }
+              return self;
+
+            } else {
+
+              return target.apply(
+                  that,
+                  args.concat(slice.call(arguments))
+              );
+
+            }
+
+        };
+
+        return bound;
+      };
+    }
+
+    function setCss( str ) {
+        mStyle.cssText = str;
+    }
+
+    function setCssAll( str1, str2 ) {
+        return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
+    }
+
+    function is( obj, type ) {
+        return typeof obj === type;
+    }
+
+    function contains( str, substr ) {
+        return !!~('' + str).indexOf(substr);
+    }
+
+
+    function testDOMProps( props, obj, elem ) {
+        for ( var i in props ) {
+            var item = obj[props[i]];
+            if ( item !== undefined) {
+
+                            if (elem === false) return props[i];
+
+                            if (is(item, 'function')){
+                                return item.bind(elem || obj);
+                }
+
+                            return item;
+            }
+        }
+        return false;
+    }
+    for ( var feature in tests ) {
+        if ( hasOwnProp(tests, feature) ) {
+                                    featureName  = feature.toLowerCase();
+            Modernizr[featureName] = tests[feature]();
+
+            classes.push((Modernizr[featureName] ? '' : 'no-') + featureName);
+        }
+    }
+
+
+
+     Modernizr.addTest = function ( feature, test ) {
+       if ( typeof feature == 'object' ) {
+         for ( var key in feature ) {
+           if ( hasOwnProp( feature, key ) ) {
+             Modernizr.addTest( key, feature[ key ] );
+           }
+         }
+       } else {
+
+         feature = feature.toLowerCase();
+
+         if ( Modernizr[feature] !== undefined ) {
+                                              return Modernizr;
+         }
+
+         test = typeof test == 'function' ? test() : test;
+
+         if (typeof enableClasses !== "undefined" && enableClasses) {
+           docElement.className += ' ' + (test ? '' : 'no-') + feature;
+         }
+         Modernizr[feature] = test;
+
+       }
+
+       return Modernizr;
+     };
+
+
+    setCss('');
+    modElem = inputElem = null;
+
+
+    Modernizr._version      = version;
+
+
+    return Modernizr;
+
+})(this, this.document);
+;

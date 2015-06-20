@@ -19,6 +19,7 @@
     "reset-css": "http://meyerweb.com/eric/tools/css/reset/reset.css",
     "ahomiya.sukiyaki": "https://github.com/ahomiya/sukiyaki.git",
     "ahomiya.wasabi": "https://github.com/ahomiya/wasabi.git",
+    "ahomiya.tonkatsu": "https://github.com/ahomiya/tonkatsu.git",
     "ua-parser-js": "https://github.com/faisalman/ua-parser-js.git#~0.7.7"
   }
 }
