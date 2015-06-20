@@ -48,7 +48,6 @@ var packages        = {
       packages + '/ahomiya.wasabi/js/**/*'                    // Utilities
     ],
     features: [
-
       packages + '/ua-parser-js/src/ua-parser.js',            // User-agent string parser
       packages + '/ahomiya.tonkatsu/js/ua-detection.js',      // User-agent detection
       packages_custom + '/modernizr.js',                      // Feature detection
