@@ -25,7 +25,7 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 * Includes the latest custom [Modernizr](http://modernizr.com/) build for feature detection.
 * Includes the latest [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
 * Include [Gulp.js](http://gulpjs.com) workflow.
-* Include Toolkit — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
+* Include [Toolkit] — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
   * Simple and lightweight function and mixin library for SASS.
   * Useful jQuery utilities.
   * User-agent detection plugin.
