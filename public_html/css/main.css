@@ -1,16 +1,11 @@
 /**
  * Project                            : Onigiri
- * Type                               : Website
  * CSS preprocessor                   : SASS
- * CSS architecture                   : SMACSS, MVCSS
- * CSS authoring frameworks           : Sukiyaki
+ * CSS authoring frameworks           : Toolkit
  * CSS resets / normalization         : Reset.css, Normalize.css
- * JS features detection              : Modernizr
+ * Features detection library         : Modernizr
  * Front-end template                 : Onigiri
- * Layouts                            : Responsive Web Design
  * Design approach                    : Mobile first
- * Media                              : Desktops, tablets, mobiles
- * Pixel density                      : 1-2 dppx
  * Developers                         : ahomiya.com
  */
 @font-face {
