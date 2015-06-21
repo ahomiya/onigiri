@@ -1291,9 +1291,13 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 // https://github.com/faisalman/ua-parser-js
 // -----------------------------------------------------------------------------
 // Configuration
-var parser = new UAParser(),
-    agent  = parser.getResult(),
-    html  = document.getElementsByTagName('html')[0];
+var parser          = new UAParser(),
+    agent           = parser.getResult(),
+    html            = document.getElementsByTagName('html')[0],
+    os_version      = false,
+    browser_version = false,
+    browser_legacy  = true,
+    browser_android = true;
 
 // -----------------------------------------------------------------------------
 // OS
@@ -1313,7 +1317,8 @@ if(agent.os.name == 'Android') {
   html.className += ' OS-Android';
 }
 
-html.className += ' OS-' + agent.os.version;
+// Optional : OS version
+if(os_version) html.className += ' OS-' + agent.os.version;
 
 // -----------------------------------------------------------------------------
 // Browser
@@ -1332,26 +1337,29 @@ if(agent.browser.name == 'Firefox') {
 if(agent.browser.name == 'IE') {
   html.className += ' Browser-IE';
   html.className += ' Browser-IE' + agent.browser.major;
-  if(agent.browser.major < 9) {
-    html.className += ' Browser-Legacy';
+
+  // Optional : Legacy Internet Explorer
+  if(browser_legacy) {
+    if(agent.browser.major < 9) html.className += ' Browser-Legacy';
   }
 }
 
-html.className += ' Browser-' + agent.browser.major;
+// Optional : Browser version
+if(browser_version) html.className += ' Browser-' + agent.browser.major;
 
-// Native Android Browser
-var navU = navigator.userAgent;
-var isAndroidMobile = navU.indexOf('Android') > -1 && navU.indexOf('Mozilla/5.0') > -1 && navU.indexOf('AppleWebKit') > -1;
-var regExAppleWebKit = new RegExp(/AppleWebKit\/([\d.]+)/);
-var resultAppleWebKitRegEx = regExAppleWebKit.exec(navU);
-var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navU)[1]));
-var regExChrome = new RegExp(/Chrome\/([\d.]+)/);
-var resultChromeRegEx = regExChrome.exec(navU);
-var chromeVersion = (resultChromeRegEx === null ? null : parseFloat(regExChrome.exec(navU)[1]));
-var isAndroidBrowser = isAndroidMobile && (appleWebKitVersion !== null && appleWebKitVersion >= 537) && (chromeVersion !== null && chromeVersion <= 35);
+// Optional : Native Android Browser
+if(browser_android) {
+  var navU                   = navigator.userAgent,
+      isAndroidMobile        = navU.indexOf('Android') > -1 && navU.indexOf('Mozilla/5.0') > -1 && navU.indexOf('AppleWebKit') > -1,
+      regExAppleWebKit       = new RegExp(/AppleWebKit\/([\d.]+)/),
+      resultAppleWebKitRegEx = regExAppleWebKit.exec(navU),
+      appleWebKitVersion     = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navU)[1])),
+      regExChrome            = new RegExp(/Chrome\/([\d.]+)/),
+      resultChromeRegEx      = regExChrome.exec(navU),
+      chromeVersion          = (resultChromeRegEx === null ? null : parseFloat(regExChrome.exec(navU)[1])),
+      isAndroidBrowser       = isAndroidMobile && (appleWebKitVersion !== null && appleWebKitVersion >= 537) && (chromeVersion !== null && chromeVersion <= 35);
 
-if(isAndroidBrowser) {
-  html.className += ' Browser-Android';
+  if(isAndroidBrowser) html.className += ' Browser-Android';
 }
 
 // -----------------------------------------------------------------------------
