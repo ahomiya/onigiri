@@ -26,7 +26,7 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 * Includes the latest [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
 * Include [Gulp.js](http://gulpjs.com) workflow.
 * Include Toolkit — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
-  * [Wasabi](https://github.com/ahomiya/wasabi) — collection of useful jQuery utilities.
-  * [Sukiyaki](https://github.com/ahomiya/sukiyaki) — a simple and lightweight function and mixin library for SASS.
-  * [Tonkatus](https://github.com/ahomiya/tonkatsu) — user-agent detection plugin.
+  * Simple and lightweight function and mixin library for SASS.
+  * Useful jQuery utilities.
+  * User-agent detection plugin.
 * Includes [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
