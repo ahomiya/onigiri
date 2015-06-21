@@ -26,3 +26,21 @@
 // Module	: Module name
 // Author	: ahomiya.com
 // E-mail	: hello@ahomiya.com
+
+
+// README
+.readme {
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+// Console
+.console {
+  border-top: #ccc dotted 1px;
+  margin: 15px 0;
+  padding-top: 15px;
+}
+.console-headline {
+  font-family: $font-style-bold;
+}

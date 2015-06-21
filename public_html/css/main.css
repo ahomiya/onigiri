@@ -483,6 +483,16 @@ th {
 .invisible {
   visibility: hidden; }
 
+.readme p {
+  margin-bottom: 15px; }
+
+.console {
+  border-top: #ccc dotted 1px;
+  margin: 15px 0;
+  padding-top: 15px; }
+
+.console-headline {
+  font-family: Font-Bold; }
 
 
 /*# sourceMappingURL=../maps/main.css.map */
