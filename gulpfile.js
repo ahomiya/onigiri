@@ -5,7 +5,7 @@ var gulp            = require('gulp'),                        // Gulp
     sass            = require('gulp-sass'),                   // Sass
     rename          = require('gulp-rename'),                 // Rename
     concat          = require('gulp-concat'),                 // Concatinate
-    uglify          = require('gulp-uglify'),                 // Minified
+    uglify          = require('gulp-uglify'),                 // Minify
     browserSync     = require('browser-sync');                // Browser sync
 
 // -----------------------------------------------------------------------------
@@ -13,7 +13,8 @@ var gulp            = require('gulp'),                        // Gulp
 var browser_reload  = browserSync.reload,                     // Browser reloading
     document_root   = './public_html',                        // Document root
     packages        = './packages',                           // Packages
-    packages_custom = document_root + '/js/custom'            // Custom packages
+    packages_custom = document_root + '/js/custom',           // Custom packages
+    toolkit         = '/ahomiya.toolkit/dist',                // Toolkit
     url             = 'ihost.ahomiya.com.onigiri';            // Server name
 
 // -----------------------------------------------------------------------------
@@ -45,12 +46,12 @@ var packages        = {
     core: [
       packages + '/jquery/dist/jquery.js',                    // Library
       packages + '/enquire/dist/enquire.js',                  // Media queries
-      packages + '/ahomiya.wasabi/js/**/*'                    // Utilities
+      packages + toolkit + '/js/toolkit/jquery.utilities.js', // Utilities
     ],
     features: [
-      packages + '/ua-parser-js/src/ua-parser.js',            // User-agent string parser
-      packages + '/ahomiya.tonkatsu/js/ua-detection.js',      // User-agent detection
       packages_custom + '/modernizr.js',                      // Feature detection
+      packages + toolkit + '/js/toolkit/ua-parser.js',        // User-agent parser
+      packages + toolkit + '/js/toolkit/ua-detection.js'      // User-agent detection
     ],
     polyfills: [
       packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
@@ -67,7 +68,7 @@ var packages        = {
       packages + '/normalize-scss/_normalize.scss'            // CSS normalize
     ],
     helpers: [
-      packages + '/ahomiya.sukiyaki/scss/**/*'                // Function & mixin
+      packages + toolkit + '/sass/**/*'                       // Function & mixin
     ]
   }
 
@@ -169,7 +170,7 @@ gulp.task('browser.sync', function() {
 // Task runners
 
 // JavaScript libraries
-gulp.task('js.library.build',
+gulp.task('build:js.libraries',
   [
     'js.core',           // Core
     'js.features',       // Features
@@ -178,7 +179,7 @@ gulp.task('js.library.build',
 );
 
 // SASS frameworks
-gulp.task('sass.library.build',
+gulp.task('build:sass.libraries',
   [
     'sass.reset',        // Reset
     'sass.normalize',    // Normalize
