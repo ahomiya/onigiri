@@ -20,13 +20,13 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 
 * HTML5, CSS3, and JavaScript ready.
 * Cross-browser compatible (Safari, Chrome, Firefox, IE8+, Mobile Safari).
-* Includes [Reset.css](http://meyerweb.com/eric/tools/css/reset/) and [Normalize.css](http://necolas.github.com/normalize.css/) to define a consistent foundation across browsers to build the site on.
-* Includes the latest [jQuery](http://jquery.com/).
-* Includes the latest custom [Modernizr](http://modernizr.com/) build for feature detection.
-* Includes the latest [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
-* Include [Gulp.js](http://gulpjs.com) workflow.
-* Include [Toolkit] — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
-  * Simple and lightweight function and mixin library for SASS.
-  * Useful jQuery utilities.
-  * User-agent detection plugin.
-* Includes [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
+* Includes:
+  * [Reset.css](http://meyerweb.com/eric/tools/css/reset/) and [Normalize.css](http://necolas.github.com/normalize.css/) to define a consistent foundation across browsers to build the site on.
+  * [jQuery](http://jquery.com/) — a fast, small, and feature-rich JavaScript library
+  * A custom build of [Modernizr](http://modernizr.com/) for feature detection
+  * [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
+  * [Toolkit](https://github.com/ahomiya/toolkit) — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
+* [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
+* [Bower](http://bower.io) — a package manager for the web.
+* [Gulp.js](http://gulpjs.com) — a streaming build system.
+* [libSass](http://libsass.org) enchanced.
