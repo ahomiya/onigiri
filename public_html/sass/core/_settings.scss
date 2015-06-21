@@ -82,14 +82,11 @@ $link-bkg-active        : #fff;
 $path-vendor            : "vendor/";
 
 
-// Devices
-$device-mouse           : ".no-touch &";
-$device-touch           : ".touch &";
-
-
 // OS
 $os-mac                 : ".OS-Mac &";
 $os-windows             : ".OS-Windows &";
+$os-ios                 : ".OS-iOS &";
+$os-android             : ".OS-Android &";
 
 
 // Browsers
@@ -97,11 +94,24 @@ $browser-chrome         : ".Browser-Chrome &";
 $browser-safari         : ".Browser-Safari &";
 $browser-firefox        : ".Browser-Firefox &";
 $browser-ie             : ".Browser-IE &";
-$browser-ie-08          : ".MSIE-8 &";
-$browser-ie-09          : ".MSIE-9 &";
-$browser-ie-10          : ".MSIE-10 &";
-$browser-ie-11          : ".MSIE-11 &";
-$browser-legacy         : ".MSIE-8 &";
+$browser-ie-08          : ".Browser-IE8 &";
+$browser-ie-09          : ".Browser-IE9 &";
+$browser-ie-10          : ".Browser-IE10 &";
+$browser-ie-11          : ".Browser-IE11 &";
+$browser-legacy         : ".Browser-Legacy &";
+$browser-android        : ".Browser-Android &";
+
+
+// Devices
+$device-mouse           : ".no-touch &";
+$device-touch           : ".touch &";
+$device-tablet          : ".Device-Tablet &";
+$device-mobile          : ".Device-Mobile &";
+$device-iphone          : ".Device-iPhone &";
+$device-ipad            : ".Device-iPad &";
+$device-ipod            : ".Device-iPod &";
+$device-s4              : ".Device-S4 &";
+$device-s5              : ".Device-S5 &";
 
 
 // Ratios
