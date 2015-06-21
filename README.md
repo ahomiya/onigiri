@@ -18,11 +18,15 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 
 ## Features
 
-* HTML5, CSS3 (SASS) and JavaScript (jQuery) ready.
+* HTML5, CSS3, and JavaScript ready.
 * Cross-browser compatible (Safari, Chrome, Firefox, IE8+, Mobile Safari).
 * Includes [Reset.css](http://meyerweb.com/eric/tools/css/reset/) and [Normalize.css](http://necolas.github.com/normalize.css/) to define a consistent foundation across browsers to build the site on.
-* Includes the latest [jQuery](http://jquery.com/) via CDN, with a local fallback.
-* Includes the latest [Modernizr](http://modernizr.com/) build for feature detection.
+* Includes the latest [jQuery](http://jquery.com/).
+* Includes the latest custom [Modernizr](http://modernizr.com/) build for feature detection.
 * Includes the latest [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
-* Useful SASS helpers.
+* Include [Gulp.js](http://gulpjs.com) workflow.
+* Include Toolkit — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
+  * [Wasabi](https://github.com/ahomiya/wasabi) — collection of useful jQuery utilities.
+  * [Sukiyaki](https://github.com/ahomiya/sukiyaki) — a simple and lightweight function and mixin library for SASS.
+  * [Tonkatus](https://github.com/ahomiya/tonkatsu) — user-agent detection plugin.
 * Includes [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
