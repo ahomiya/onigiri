@@ -27,6 +27,7 @@ var root            = {
     main            : document_root + '/css'                  // CSS - main
   },
   js: {
+    default         : document_root + '/js',                  // JS - default
     main            : document_root + '/js/main.js',          // JS - main
     vendor          : document_root + '/js/vendor',           // JS - vendor
     custom          : document_root + '/js/custom'            // JS - custom
@@ -57,6 +58,11 @@ var packages        = {
       packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
       packages + '/matchMedia/matchMedia.addListener.js'
     ]
+  },
+
+  // JavaScript plugins
+  js_plugins: {
+    console: packages_custom + '/console.js'                  // Console
   },
 
   // SASS frameworks
@@ -98,6 +104,13 @@ gulp.task('js.polyfills', function() {
     .pipe(concat('libraries.polyfills.js'))
     // .pipe(uglify())
     .pipe(gulp.dest(root.js.vendor));
+});
+
+gulp.task('js.plugins', function() {
+  return gulp.src(packages.js_plugins.console)
+    .pipe(concat('plugins.js'))
+    // .pipe(uglify())
+    .pipe(gulp.dest(root.js.default));
 });
 
 // SASS reset & normalize
@@ -174,7 +187,8 @@ gulp.task('build:js.libraries',
   [
     'js.core',           // Core
     'js.features',       // Features
-    'js.polyfills'       // Polyfills
+    'js.polyfills',      // Polyfills
+    'js.plugins'         // Plugins
   ]
 );
 
