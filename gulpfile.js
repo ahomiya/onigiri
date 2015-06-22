@@ -27,6 +27,7 @@ var root            = {
     main            : document_root + '/css'                  // CSS - main
   },
   js: {
+    default         : document_root + '/js',                  // JS - default
     main            : document_root + '/js/main.js',          // JS - main
     vendor          : document_root + '/js/vendor',           // JS - vendor
     custom          : document_root + '/js/custom'            // JS - custom
@@ -52,6 +53,9 @@ var packages        = {
       packages_custom + '/modernizr.js',                      // Feature detection
       packages + toolkit + '/js/toolkit/ua-parser.js',        // User-agent parser
       packages + toolkit + '/js/toolkit/ua-detection.js'      // User-agent detection
+    ],
+    plugins: [
+      packages_custom + '/console.js'                         // Console
     ],
     polyfills: [
       packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
@@ -79,41 +83,48 @@ var packages        = {
 // Concatenating, minifying, and optimizing files
 
 // JavaScript libraries
-gulp.task('js.core', function() {
+gulp.task('build:js.core', function() {
   return gulp.src(packages.js_libraries.core)
     .pipe(concat('libraries.core.js'))
     // .pipe(uglify())
     .pipe(gulp.dest(root.js.vendor));
 });
 
-gulp.task('js.features', function() {
+gulp.task('build:js.features', function() {
   return gulp.src(packages.js_libraries.features)
     .pipe(concat('libraries.features.js'))
     // .pipe(uglify())
     .pipe(gulp.dest(root.js.vendor));
 });
 
-gulp.task('js.polyfills', function() {
+gulp.task('build:js.polyfills', function() {
   return gulp.src(packages.js_libraries.polyfills)
     .pipe(concat('libraries.polyfills.js'))
     // .pipe(uglify())
     .pipe(gulp.dest(root.js.vendor));
 });
 
+gulp.task('build:js.plugins', function() {
+  return gulp.src(packages.js_libraries.plugins)
+    .pipe(concat('libraries.plugins.js'))
+    // .pipe(uglify())
+    .pipe(gulp.dest(root.js.vendor));
+});
+
 // SASS reset & normalize
-gulp.task('sass.reset', function() {
+gulp.task('build:sass.reset', function() {
   return gulp.src(packages.sass_frameworks.reset)
     .pipe(rename({prefix: '_', basename: 'reset', extname: '.scss'}))
     .pipe(gulp.dest(root.sass.vendor));
 });
 
-gulp.task('sass.normalize', function() {
+gulp.task('build:sass.normalize', function() {
   return gulp.src(packages.sass_frameworks.normalize)
     .pipe(gulp.dest(root.sass.vendor));
 });
 
 // SASS function and mixin library
-gulp.task('sass.helpers', function() {
+gulp.task('build:sass.helpers', function() {
   return gulp.src(packages.sass_frameworks.helpers)
     .pipe(gulp.dest(root.sass.vendor));
 });
@@ -121,7 +132,7 @@ gulp.task('sass.helpers', function() {
 // Compiling tasks
 
 // SASS
-gulp.task('sass', function() {
+gulp.task('compile:sass', function() {
   return gulp.src(root.sass.all)
     // Source map - initialize
     .pipe(sourcemaps.init())
@@ -152,14 +163,14 @@ gulp.task('sass', function() {
 
 // -----------------------------------------------------------------------------
 // Synchronising file changes
-gulp.task('browser.sync', function() {
+gulp.task('synchronize:browser', function() {
   // Initialize
   browserSync({
     proxy: url
   });
 
   // Injecting CSS
-  gulp.watch(root.sass.all, ['sass']);
+  gulp.watch(root.sass.all, ['compile:sass']);
 
   // Reloading changes in the browser
   gulp.watch(root.html.template).on('change', browser_reload);
@@ -172,25 +183,26 @@ gulp.task('browser.sync', function() {
 // JavaScript libraries
 gulp.task('build:js.libraries',
   [
-    'js.core',           // Core
-    'js.features',       // Features
-    'js.polyfills'       // Polyfills
+    'build:js.core',           // Core
+    'build:js.features',       // Features
+    'build:js.polyfills',      // Polyfills
+    'build:js.plugins'         // Plugins
   ]
 );
 
 // SASS frameworks
 gulp.task('build:sass.libraries',
   [
-    'sass.reset',        // Reset
-    'sass.normalize',    // Normalize
-    'sass.helpers'       // Function & mixin
+    'build:sass.reset',        // Reset
+    'build:sass.normalize',    // Normalize
+    'build:sass.helpers'       // Function & mixin
   ]
 );
 
 // Default
 gulp.task('default',
   [
-    'sass',              // Compiling SASS
-    'browser.sync'       // Synchronising file changes
+    'compile:sass',            // Compiling SASS
+    'synchronize:browser'      // Synchronising file changes
   ]
 );
