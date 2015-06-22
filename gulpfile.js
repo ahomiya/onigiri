@@ -54,15 +54,13 @@ var packages        = {
       packages + toolkit + '/js/toolkit/ua-parser.js',        // User-agent parser
       packages + toolkit + '/js/toolkit/ua-detection.js'      // User-agent detection
     ],
+    plugins: [
+      packages_custom + '/console.js'                         // Console
+    ],
     polyfills: [
       packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
       packages + '/matchMedia/matchMedia.addListener.js'
     ]
-  },
-
-  // JavaScript plugins
-  js_plugins: {
-    console: packages_custom + '/console.js'                  // Console
   },
 
   // SASS frameworks
@@ -107,10 +105,10 @@ gulp.task('js.polyfills', function() {
 });
 
 gulp.task('js.plugins', function() {
-  return gulp.src(packages.js_plugins.console)
-    .pipe(concat('plugins.js'))
+  return gulp.src(packages.js_libraries.plugins)
+    .pipe(concat('libraries.plugins.js'))
     // .pipe(uglify())
-    .pipe(gulp.dest(root.js.default));
+    .pipe(gulp.dest(root.js.vendor));
 });
 
 // SASS reset & normalize
