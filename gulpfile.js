@@ -13,7 +13,7 @@ var gulp            = require('gulp'),                        // Gulp
 var browser_reload  = browserSync.reload,                     // Browser reloading
     document_root   = './public_html',                        // Document root
     packages        = './packages',                           // Packages
-    packages_custom = document_root + '/js/custom',           // Custom packages
+    packages_custom = document_root,                          // Custom packages
     toolkit         = '/ahomiya.toolkit/dist',                // Toolkit
     url             = 'ihost.ahomiya.com.onigiri';            // Server name
 
@@ -30,11 +30,12 @@ var root            = {
     default         : document_root + '/js',                  // JS - default
     main            : document_root + '/js/main.js',          // JS - main
     vendor          : document_root + '/js/vendor',           // JS - vendor
-    custom          : document_root + '/js/custom'            // JS - custom
+    custom          : document_root + '/js/vendor/custom'     // JS - custom
   },
   sass: {
     all             : document_root + '/sass/**/*.scss',      // SASS - all
-    vendor          : document_root + '/sass/vendor/'         // SASS - vendor
+    vendor          : document_root + '/sass/vendor',         // SASS - vendor
+    vendor          : document_root + '/sass/vendor/custom'   // SASS - custom
   }
 };
 
@@ -50,12 +51,12 @@ var packages        = {
       packages + toolkit + '/js/toolkit/jquery.utilities.js', // Utilities
     ],
     features: [
-      packages_custom + '/modernizr.js',                      // Feature detection
+      packages_custom + '/js/vendor/custom/modernizr.js',     // Feature detection
       packages + toolkit + '/js/toolkit/ua-parser.js',        // User-agent parser
       packages + toolkit + '/js/toolkit/ua-detection.js'      // User-agent detection
     ],
     plugins: [
-      packages_custom + '/console.js'                         // Console
+      packages_custom + '/js/vendor/custom/console.js'        // Console
     ],
     polyfills: [
       packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
