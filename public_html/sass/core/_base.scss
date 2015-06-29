@@ -8,7 +8,9 @@
 // Tell the browser to consider border and padding as part of the width of
 // an object rather than as an addition.
 * {
-	&, &:before, &:after {
+	&,
+	&:before,
+	&:after {
 		box-sizing: border-box;
 	}
 }
@@ -85,14 +87,12 @@ mark { background-color: transparent; }
 // -----------------------------------------------------------------------------
 // Embedded content
 img { vertical-align: middle; }
-
 // -----------------------------------------------------------------------------
 // Grouping content
 hr {}
-
 // -----------------------------------------------------------------------------
 // Forms
-
+form {}
 // -----------------------------------------------------------------------------
 // Tables
 table {
