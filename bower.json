@@ -17,6 +17,7 @@
     "enquire": "~2.1.2",
     "matchMedia": "~0.2.0",
     "reset-css": "http://meyerweb.com/eric/tools/css/reset/reset.css",
-    "ahomiya.toolkit": "https://github.com/ahomiya/toolkit.git"
+    "ahomiya.toolkit": "https://github.com/ahomiya/toolkit.git",
+    "smartresize": "https://github.com/louisremi/jquery-smartresize.git"
   }
 }

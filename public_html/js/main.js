@@ -58,8 +58,9 @@ $window.load(function() {
 });
 // -----------------------------------------------------------------------------
 // Window - resize
-$window.resize(function() {
+$window.on('debouncedresize', function(event) {
 
   // Log
-  console.log('Window\'s is changed.');
+  console.log('Window has been resized.');
+
 });
