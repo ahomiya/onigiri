@@ -22,9 +22,10 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 * Cross-browser compatible (Safari, Chrome, Firefox, IE8+, Mobile Safari).
 * Includes:
   * [Reset.css](http://meyerweb.com/eric/tools/css/reset/) and [Normalize.css](http://necolas.github.com/normalize.css/) to define a consistent foundation across browsers to build the site on.
-  * [jQuery](http://jquery.com/) — a fast, small, and feature-rich JavaScript library
-  * A custom build of [Modernizr](http://modernizr.com/) for feature detection
-  * [enquire.js](http://wicky.nillia.ms/enquire.js/), a lightweight, pure JavaScript library for responding to CSS media queries.
+  * [jQuery](http://jquery.com/) — a fast, small, and feature-rich JavaScript library.
+  * A custom build of [Modernizr](http://modernizr.com/) for feature detection.
+  * [enquire.js](http://wicky.nillia.ms/enquire.js/) — a lightweight, pure JavaScript library for responding to CSS media queries.
+  * [jquery-smartresize](https://github.com/louisremi/jquery-smartresize/) — debounced and throttled resize events for jQuery.
   * [Toolkit](https://github.com/ahomiya/toolkit) — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
 * [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
 * [Bower](http://bower.io) — a package manager for the web.
