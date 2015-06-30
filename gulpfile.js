@@ -48,6 +48,7 @@ var packages        = {
     core: [
       packages + '/jquery/dist/jquery.js',                    // Library
       packages + '/enquire/dist/enquire.js',                  // Media queries
+      packages + '/smartresize/jquery.debouncedresize.js',    // Debounced resize
       packages + toolkit + '/js/toolkit/jquery.utilities.js', // Utilities
     ],
     features: [
