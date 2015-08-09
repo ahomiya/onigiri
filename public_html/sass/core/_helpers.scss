@@ -14,3 +14,9 @@
 @mixin inlineblock-container {
   font-size: 0;
 }
+
+
+// Image URL
+@function image-url($image) {
+  @return url($path-image + $image);
+}
