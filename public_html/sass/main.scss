@@ -26,6 +26,7 @@
 
 // Overriding
 @import "vendor";                     // Overriding
+
 // -----------------------------------------------------------------------------
 // CORE
 // Represents the tools and materials required at the ground level of a project.
@@ -37,6 +38,7 @@
 @import "core/base";                  // Base-level styles
 @import "core/utilities";             // Utilities
 @import "core/content";               // Content
+
 // -----------------------------------------------------------------------------
 // STRUCTURE
 // A project’s UI elements that are too specialized for use across
@@ -44,6 +46,7 @@
 
 @import "structure/grid";             // Grid
 @import "structure/layout";           // Layout
+
 // -----------------------------------------------------------------------------
 // COMPONENTS
 // The main functional units that display in template.
@@ -51,6 +54,7 @@
 
 @import "components/component-1";
 @import "components/component-2";
+
 // -----------------------------------------------------------------------------
 // QUICK STYLES
 
