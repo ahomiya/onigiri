@@ -2,24 +2,46 @@
 // Grouping all the app-wide settings into one file allows newcomers to
 // the project the means to find out what's available to them quickly.
 // -----------------------------------------------------------------------------
+// Paths
+$path-reference         : relative;
+$path-vendor            : "vendor/";
+$path-image             : "img";
+$path-font              : "fonts";
+
+// URLs
+@function reference-url($path-reference) {
+  @if ($path-reference == relative) { $reference: "../"; }
+  @if ($path-reference == absolute) { $reference: "/"; }
+  @return $reference;
+}
+
+@function font-url($asset) {
+  @return url(reference-url($path-reference) + $path-font + "/" + $asset);
+}
+
+@function image-url($asset) {
+  @return url(reference-url($path-reference) + $path-image + "/" + $asset);
+}
+
+// -----------------------------------------------------------------------------
 // Fonts
 
 // Regular
 @font-face {
   font-family: "Font-Regular";
-  src: url("../fonts/Caviar.Dreams-Regular.ttf");
+  src: font-url("Caviar.Dreams-Regular.ttf");
 }
 
 // Bold
 @font-face {
   font-family: "Font-Bold";
-  src: url("../fonts/Caviar.Dreams-Bold.ttf");
+  src: font-url("Caviar.Dreams-Bold.ttf");
 }
 
 // Italic
 @font-face {
   font-family: "Font-Italic";
-  src: url("../fonts/Caviar.Dreams-Italic.ttf");
+  src: font-url("Caviar.Dreams-Italic.ttf");
 }
 // -----------------------------------------------------------------------------
 // Configurable variables
@@ -98,11 +120,6 @@ $link-color-active      : #000;
 $link-bkg-normal        : #fff;
 $link-bkg-hover         : #fff;
 $link-bkg-active        : #fff;
-
-
-// Path
-$path-vendor            : "vendor/";
-$path-image             : "../img/";
 
 
 // OS
