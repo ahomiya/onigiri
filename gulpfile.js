@@ -19,7 +19,7 @@ var project         = 'onigiri',                              // Project name
 
     localHost       = './public_html',                        // Local host
     localDomain     = '.ahomiya.com',                         // Local domain
-    localUrl        = 'local' + project + localDomain,        // Local URL
+    localUrl        = 'local.' + project + localDomain,       // Local URL
 
     componentPackage= './components/package',                 // Package components
     componentCustom = './components/custom'                   // Custom components
