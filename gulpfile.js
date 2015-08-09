@@ -23,7 +23,7 @@ var project         = 'onigiri',                              // Project name
     localUrl        = 'local.' + project + localDomain,       // Local URL
 
     componentPackage= './components/package',                 // Package components
-    componentCustom = './components/custom'                   // Custom components
+    componentCustom = './components/custom';                  // Custom components
 
 // -----------------------------------------------------------------------------
 // Methods
