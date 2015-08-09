@@ -52,6 +52,7 @@
 // The main functional units that display in template.
 // They can be seen as mini-applications.
 
+@import "components/main";            // Main content
 @import "components/header";          // Header
 @import "components/footer";          // Footer
 @import "components/navbar";          // Navbar
