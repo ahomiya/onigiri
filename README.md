@@ -27,6 +27,7 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
   * [enquire.js](http://wicky.nillia.ms/enquire.js/) — a lightweight, pure JavaScript library for responding to CSS media queries.
   * [jquery-smartresize](https://github.com/louisremi/jquery-smartresize/) — debounced and throttled resize events for jQuery.
   * [Toolkit](https://github.com/ahomiya/toolkit) — a collection of extensible front-end UI components and behaviors for the responsive, mobile, and modern web.
+  * [UADetection.js](https://github.com/ahomiya/ua-detection-js.git) - a lightweight JavaScript-based User-Agent detection plugin.
 * [EditorConfig](http://editorconfig.org) — it helps developers define and maintain consistent coding styles between different editors and IDEs.
 * [Bower](http://bower.io) — a package manager for the web.
 * [Gulp.js](http://gulpjs.com) — a streaming build system.
