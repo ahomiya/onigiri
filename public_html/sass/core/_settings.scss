@@ -42,16 +42,38 @@ $line-height-base       : 20px;
 
 
 // Grid
-$grid-width-base        : 1280px;
-$grid-width-tablet      : 1024px;
-$grid-padding-base      : 20px;
-$grid-padding-tablet    : 15px;
-$grid-gutter-base       : 40px;
-$grid-gutter-tablet     : 30px;
-$grid-column-base       : 6;
-$grid-column-tablet     : 6;
-$grid-breakpoint-desktop: 1280px;
-$grid-breakpoint-tablet : 1279px;
+$grid-width-min         : 320px;
+$grid-width-max         : 1920px;
+
+$grid-width-small       : 100%;
+$grid-width-medium      : 768px;
+$grid-width-large       : 1280px;
+$grid-width-xlarge      : 1440px;
+$grid-width-xxlarge     : 1920px;
+
+$grid-padding-small     : 20px;
+$grid-padding-medium    : 20px;
+$grid-padding-large     : 20px;
+$grid-padding-xlarge    : 20px;
+$grid-padding-xxlarge   : 20px;
+
+$grid-gutter-small      : 40px;
+$grid-gutter-medium     : 40px;
+$grid-gutter-large      : 40px;
+$grid-gutter-xlarge     : 40px;
+$grid-gutter-xxlarge    : 40px;
+
+$grid-column-small      : 12;
+$grid-column-medium     : 12;
+$grid-column-large      : 12;
+$grid-column-xlarge     : 12;
+$grid-column-xxlarge    : 12;
+
+$grid-breakpoint-small  : 320px;
+$grid-breakpoint-medium : 768px;
+$grid-breakpoint-large  : 1280px;
+$grid-breakpoint-xlarge : 1440px;
+$grid-breakpoint-xxlarge: 1920px;
 
 
 // Colors
