@@ -1,5 +1,5 @@
 /**
- * Project                    : Project name
+ * Project                    : Onigiri
  * JavaScript libraries       : jQuery
  * Features detection library : Modernizr
  * Developers                 : ahomiya.com

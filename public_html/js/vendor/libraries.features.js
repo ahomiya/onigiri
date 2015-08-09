@@ -418,7 +418,7 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 ;
 
 /**
- * UAParser.js v0.7.7
+ * UAParser.js v0.7.9
  * Lightweight JavaScript-based User-Agent string parser
  * https://github.com/faisalman/ua-parser-js
  *
@@ -435,7 +435,7 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
     /////////////
 
 
-    var LIBVERSION  = '0.7.7',
+    var LIBVERSION  = '0.7.9',
         EMPTY       = '',
         UNKNOWN     = '?',
         FUNC_TYPE   = 'function',
@@ -668,13 +668,15 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 
             // Webkit/KHTML based
             /(rekonq)\/([\w\.]+)*/i,                                            // Rekonq
-            /(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi)\/([\w\.-]+)/i
-                                                                                // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron
+            /(chromium|flock|rockmelt|midori|epiphany|silk|skyfire|ovibrowser|bolt|iron|vivaldi|iridium)\/([\w\.-]+)/i
+                                                                                // Chromium/Flock/RockMelt/Midori/Epiphany/Silk/Skyfire/Bolt/Iron/Iridium
             ], [NAME, VERSION], [
 
-            /(trident).+rv[:\s]([\w\.]+).+like\sgecko/i,                        // IE11
-            /(Edge)\/((\d+)?[\w\.]+)/i                                          // IE12
+            /(trident).+rv[:\s]([\w\.]+).+like\sgecko/i                         // IE11
             ], [[NAME, 'IE'], VERSION], [
+
+            /(edge)\/((\d+)?[\w\.]+)/i                                          // Microsoft Edge
+            ], [NAME, VERSION], [
 
             /(yabrowser)\/([\w\.]+)/i                                           // Yandex
             ], [[NAME, 'Yandex'], VERSION], [
@@ -719,6 +721,8 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
             // Gecko based
             /(navigator|netscape)\/([\w\.-]+)/i                                 // Netscape
             ], [[NAME, 'Netscape'], VERSION], [
+            /fxios\/([\w\.-]+)/i                                                // Firefox for iOS
+            ], [VERSION, [NAME, 'Firefox']], [
             /(swiftfox)/i,                                                      // Swiftfox
             /(icedragon|iceweasel|camino|chimera|fennec|maemo\sbrowser|minimo|conkeror)[\/\s]?([\w\.\+]+)/i,
                                                                                 // IceDragon/Iceweasel/Camino/Chimera/Fennec/Maemo/Minimo/Conkeror
@@ -1072,6 +1076,9 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
 
         engine : [[
 
+            /windows.+\sedge\/([\w\.]+)/i                                       // EdgeHTML
+            ], [VERSION, [NAME, 'EdgeHTML']], [
+
             /(presto)\/([\w\.]+)/i,                                             // Presto
             /(webkit|trident|netfront|netsurf|amaya|lynx|w3m)\/([\w\.]+)/i,     // WebKit/Trident/NetFront/NetSurf/Amaya/Lynx/w3m
             /(khtml|tasman|links)[\/\s]\(?([\w\.]+)/i,                          // KHTML/Tasman/Links
@@ -1098,7 +1105,7 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
             ], [[NAME, 'BlackBerry'], VERSION], [
             /(blackberry)\w*\/?([\w\.]+)*/i,                                    // Blackberry
             /(tizen)[\/\s]([\w\.]+)/i,                                          // Tizen
-            /(android|webos|palm\os|qnx|bada|rim\stablet\sos|meego|contiki)[\/\s-]?([\w\.]+)*/i,
+            /(android|webos|palm\sos|qnx|bada|rim\stablet\sos|meego|contiki)[\/\s-]?([\w\.]+)*/i,
                                                                                 // Android/WebOS/Palm/QNX/Bada/RIM/MeeGo/Contiki
             /linux;.+(sailfish);/i                                              // Sailfish OS
             ], [NAME, VERSION], [
@@ -1279,11 +1286,12 @@ Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0));};
         };
     }
 
-})(this);
+})(typeof window === 'object' ? window : this);
 
-// Tonkatsu User-agent Detection
+// UADetection.js
+// Lightweight JavaScript-based User-Agent detection plugin.
 
-// Tonkatsu runs quickly on page load to detect features;
+// UADetection.js runs quickly on page load to detect features;
 // it then creates a JavaScript object with the results, and adds classes
 // to the html element
 
@@ -1295,25 +1303,25 @@ var parser          = new UAParser(),
     agent           = parser.getResult(),
     html            = document.getElementsByTagName('html')[0],
     os_version      = false,
-    browser_version = false,
-    browser_legacy  = true,
-    browser_android = true;
+    browserVersion  = false,
+    browserLegacy   = true,
+    browserAndroid  = true;
 
 // -----------------------------------------------------------------------------
 // OS
-if(agent.os.name == 'Mac OS') {
+if(agent.os.name === 'Mac OS') {
   html.className += ' OS-Mac';
 }
 
-if(agent.os.name == 'Windows') {
+if(agent.os.name === 'Windows') {
   html.className += ' OS-Windows';
 }
 
-if(agent.os.name == 'iOS') {
+if(agent.os.name === 'iOS') {
   html.className += ' OS-iOS';
 }
 
-if(agent.os.name == 'Android') {
+if(agent.os.name === 'Android') {
   html.className += ' OS-Android';
 }
 
@@ -1322,33 +1330,33 @@ if(os_version) html.className += ' OS-' + agent.os.version;
 
 // -----------------------------------------------------------------------------
 // Browser
-if(agent.browser.name == 'Chrome') {
+if(agent.browser.name === 'Chrome') {
   html.className += ' Browser-Chrome';
 }
 
-if(agent.browser.name == 'Safari' || agent.browser.name == 'Mobile Safari') {
+if(agent.browser.name === 'Safari' || agent.browser.name === 'Mobile Safari') {
   html.className += ' Browser-Safari';
 }
 
-if(agent.browser.name == 'Firefox') {
+if(agent.browser.name === 'Firefox') {
   html.className += ' Browser-Firefox';
 }
 
-if(agent.browser.name == 'IE') {
+if(agent.browser.name === 'IE') {
   html.className += ' Browser-IE';
   html.className += ' Browser-IE' + agent.browser.major;
 
   // Optional : Legacy Internet Explorer
-  if(browser_legacy) {
+  if(browserLegacy) {
     if(agent.browser.major < 9) html.className += ' Browser-Legacy';
   }
 }
 
 // Optional : Browser version
-if(browser_version) html.className += ' Browser-' + agent.browser.major;
+if(browserVersion) html.className += ' Browser-' + agent.browser.major;
 
 // Optional : Native Android Browser
-if(browser_android) {
+if(browserAndroid) {
   var navU                   = navigator.userAgent,
       isAndroidMobile        = navU.indexOf('Android') > -1 && navU.indexOf('Mozilla/5.0') > -1 && navU.indexOf('AppleWebKit') > -1,
       regExAppleWebKit       = new RegExp(/AppleWebKit\/([\d.]+)/),
@@ -1364,30 +1372,30 @@ if(browser_android) {
 
 // -----------------------------------------------------------------------------
 // Device
-if(agent.device.model == 'iPad') {
+if(agent.device.model === 'iPad') {
   html.className += ' Device-iPad';
 }
 
-if(agent.device.model == 'iPhone') {
+if(agent.device.model === 'iPhone') {
   html.className += ' Device-iPhone';
 }
 
-if(agent.device.model == 'iPod') {
+if(agent.device.model === 'iPod') {
   html.className += ' Device-iPod';
 }
 
-if(agent.device.model == 'GT-I9505') {
+if(agent.device.model === 'GT-I9505') {
   html.className += ' Device-S4';
 }
 
-if(agent.device.model == 'SM-G900F') {
+if(agent.device.model === 'SM-G900F') {
   html.className += ' Device-S5';
 }
 
-if(agent.device.type == 'tablet') {
+if(agent.device.type === 'tablet') {
   html.className += ' Device-Tablet';
 }
 
-if(agent.device.type == 'mobile') {
+if(agent.device.type === 'mobile') {
   html.className += ' Device-Mobile';
 }

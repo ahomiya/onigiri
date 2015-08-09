@@ -1,0 +1,14 @@
+{
+  "name": "reset",
+  "_cacheHeaders": {
+    "ETag": "\"196008a-444-49ac36256d280\"",
+    "Last-Modified": "Wed, 26 Jan 2011 17:44:26 GMT",
+    "Content-Length": "1092",
+    "Content-Type": "text/css"
+  },
+  "_release": "e-tag:196008a-4",
+  "main": "index.css",
+  "_source": "http://meyerweb.com/eric/tools/css/reset/reset.css",
+  "_target": "*",
+  "_originalSource": "http://meyerweb.com/eric/tools/css/reset/reset.css"
+}

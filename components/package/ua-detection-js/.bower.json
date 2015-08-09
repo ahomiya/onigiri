@@ -1,0 +1,26 @@
+{
+  "name": "UADetection.js",
+  "authors": [
+    "ahomiya.com <hello@ahomiya.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "packages",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ua-parser-js": "~0.7.7"
+  },
+  "homepage": "https://github.com/ahomiya/ua-detection-js",
+  "_release": "e86478d44a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e86478d44a5f03e3fc14596df695557700db46ac"
+  },
+  "_source": "https://github.com/ahomiya/ua-detection-js.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ahomiya/ua-detection-js.git"
+}

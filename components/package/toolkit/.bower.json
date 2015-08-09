@@ -1,0 +1,13 @@
+{
+  "name": "ahomiya.toolkit",
+  "homepage": "https://github.com/ahomiya/toolkit",
+  "_release": "5567856de8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5567856de888d281eff9e9251bb62fb2b7a94a44"
+  },
+  "_source": "https://github.com/ahomiya/toolkit.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ahomiya/toolkit.git"
+}
