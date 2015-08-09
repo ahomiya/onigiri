@@ -9,6 +9,7 @@ From: Chiang Mai, Thailand
 Last update: 2015/08/09
 Language: English
 Doctype: HTML5
-Standards: HTML5, CSS3/SASS, JavaScript/jQuery
+Standards: HTML5, CSS3, JavaScript
 Libraries: Modernizr, jQuery, enquire.js
-Software: OS X, Sublime Text, Atom, Transmit, MAMP, Photoshop
+Frameworks: Toolkit
+Software: OS X, Sublime Text, MAMP, Tower, Transmit, Photoshop, Mou

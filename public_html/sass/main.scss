@@ -45,15 +45,26 @@
 // multiple sites.
 
 @import "structure/grid";             // Grid
-@import "structure/layout";           // Layout
+@import "structure/wrapper";          // Wrapper
+
+// -----------------------------------------------------------------------------
+// LAYOUT
+// A higher level of abstraction for components.
+// This applies layout (margin, padding, sizing, positioning).
+// Layouts hold one or more components together.
+
+@import "layout/template";            // Template
 
 // -----------------------------------------------------------------------------
 // COMPONENTS
 // The main functional units that display in template.
 // They can be seen as mini-applications.
 
-@import "components/component-1";
-@import "components/component-2";
+@import "components/main";            // Main content
+@import "components/header";          // Header
+@import "components/footer";          // Footer
+@import "components/navbar";          // Navbar
+@import "components/type";            // Typography
 
 // -----------------------------------------------------------------------------
 // QUICK STYLES
