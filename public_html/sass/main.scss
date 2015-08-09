@@ -48,6 +48,14 @@
 @import "structure/wrapper";          // Wrapper
 
 // -----------------------------------------------------------------------------
+// LAYOUT
+// A higher level of abstraction for components.
+// This applies layout (margin, padding, sizing, positioning).
+// Layouts hold one or more components together.
+
+@import "layout/template";            // Template
+
+// -----------------------------------------------------------------------------
 // COMPONENTS
 // The main functional units that display in template.
 // They can be seen as mini-applications.
