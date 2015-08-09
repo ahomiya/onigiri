@@ -48,5 +48,5 @@ sftp-config*.json
 \#*#
 
 # Package managers #
-packages/
+components/package
 node_modules/
