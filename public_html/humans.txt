@@ -3,13 +3,12 @@ Chef developer: ahomiya.com
 Contact: hello (at) ahomiya.com
 Website: http://www.ahomiya.com
 GitHub project: https://github.com/ahomiya/onigiri
-Twitter: @ahomiyadesu
-From: Chiang Rai, Thailand
+From: Chiang Mai, Thailand
 
 /* SITE */
-Last update: 2014/06/22
+Last update: 2015/08/09
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3/SASS, JavaScript/jQuery
 Libraries: Modernizr, jQuery, enquire.js
-Software: OS X Maverics, Sublime Text, Atom, Transmit, MAMP, Photoshop
+Software: OS X, Sublime Text, Atom, Transmit, MAMP, Photoshop
