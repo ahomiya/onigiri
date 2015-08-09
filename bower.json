@@ -7,17 +7,22 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "packages",
+    "components",
     "test",
     "tests"
   ],
+  "main": [],
   "dependencies": {
     "jquery": "2",
-    "normalize-scss": "~3.0.3",
-    "enquire": "~2.1.2",
-    "matchMedia": "~0.2.0",
+    "normalize-scss": "3.0.3",
+    "enquire": "2.1.2",
+    "matchMedia": "0.2.0",
     "reset-css": "http://meyerweb.com/eric/tools/css/reset/reset.css",
-    "ahomiya.toolkit": "https://github.com/ahomiya/toolkit.git",
+    "toolkit": "https://github.com/ahomiya/toolkit.git",
+    "ua-detection-js": "https://github.com/ahomiya/ua-detection-js.git",
     "smartresize": "https://github.com/louisremi/jquery-smartresize.git"
+  },
+  "resolutions": {
+    "jquery": "2"
   }
 }

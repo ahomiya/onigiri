@@ -1,0 +1,50 @@
+{
+  // CODING STYLE
+  // https://git.buzzwoo.de/buzzwoo/guideline/tree/master/javascript
+
+  // always use camelCase for variable names
+  "camelcase": true,
+  // always put semicolons in
+  "asi": false,
+  // set tab width to 2
+  "indent": 2,
+  // max nested blocks of code = 3 level
+  "maxdepth": 4,
+  // use dot notaion instead of string notation for objects
+  // for example, use `person.name` instead of `person['name']`
+  "sub": false,
+
+  // CODE QUALITY
+  // always put curly braces for control blocks, even there is 1 line inside the block
+  "curly": true,
+  // always use === instead of ==
+  "eqeqeq": true,
+  // don't make a function in a loop
+  "loopfunc": false,
+  // don't allow multi line string with \ character
+  "multistr": false,
+  // don't allow checking invalid values from `typeof`
+  // for example, `typeof foo === 'somethingbah'` is not valid
+  // see possible values of `typeof` https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+  "notypeof": false,
+
+  // Make JSHint play nice with our environment
+  // JSHint will complain about undefined variables
+  "undef": true,
+  // JSHint will complain about unused variables
+  "unused": true,
+  // let JSHint knows we are working with browsers
+  // so it doesn't complain about `window` or `document` are undefined
+  "browser": true,
+  // make JSHint not complain about `$ is undefined`
+  "jquery": true,
+  // make JSHint not complain about `console.log()` or `alert()`
+  "devel": true,
+  // make JSHint not complain about `require` in our gulpfile.js
+  "node": true,
+  // predefined global variables
+  "predef": [
+    "Modernizr",
+    "enquire"
+  ]
+}

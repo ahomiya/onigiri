@@ -1,80 +1,101 @@
 // Plugin dependencies
 var gulp            = require('gulp'),                        // Gulp
+    notify          = require('gulp-notify'),                 // Notification
     sourcemaps      = require('gulp-sourcemaps'),             // Source maps
     autoprefixer    = require('gulp-autoprefixer'),           // Prefix CSS
     sass            = require('gulp-sass'),                   // Sass
-    rename          = require('gulp-rename'),                 // Rename
-    concat          = require('gulp-concat'),                 // Concatinate
-    uglify          = require('gulp-uglify'),                 // Minify
-    browserSync     = require('browser-sync');                // Browser sync
+    rename          = require('gulp-rename'),                 // Rename files
+    concat          = require('gulp-concat'),                 // Concatinate files
+    uglify          = require('gulp-uglify'),                 // Minify files
+    htmlhint        = require('gulp-htmlhint'),               // HTML validation
+    csslint         = require('gulp-csslint'),                // CSS code quality
+    jshint          = require('gulp-jshint'),                 // JavaScript code quality
+    imagemin        = require('gulp-imagemin'),               // Minify images
+    pngquant        = require('imagemin-pngquant'),           // PNG optimizer
+    browserSync     = require('browser-sync');                // Live reload & Browser syncing
 
 // -----------------------------------------------------------------------------
 // Configurations
-var browser_reload  = browserSync.reload,                     // Browser reloading
-    document_root   = './public_html',                        // Document root
-    packages        = './packages',                           // Packages
-    packages_custom = document_root,                          // Custom packages
-    toolkit         = '/ahomiya.toolkit/dist',                // Toolkit
-    url             = 'ihost.ahomiya.com.onigiri';            // Server name
+var project         = 'onigiri',                              // Project name
+
+    localHost       = './public_html',                        // Local host
+    localDomain     = '.ahomiya.com',                         // Local domain
+    localUrl        = 'local.' + project + localDomain,       // Local URL
+
+    componentPackage= './components/package',                 // Package components
+    componentCustom = './components/custom'                   // Custom components
+
+// -----------------------------------------------------------------------------
+// Methods
+var browserReload   = browserSync.reload;                     // Browser reloading
 
 // -----------------------------------------------------------------------------
 // Globs
-var root            = {
-  html : {
-    template        : document_root + '/**/*.html'            // HTML template
-  },
-  css : {
-    main            : document_root + '/css'                  // CSS - main
-  },
-  js: {
-    default         : document_root + '/js',                  // JS - default
-    main            : document_root + '/js/main.js',          // JS - main
-    vendor          : document_root + '/js/vendor',           // JS - vendor
-    custom          : document_root + '/js/vendor/custom'     // JS - custom
-  },
-  sass: {
-    all             : document_root + '/sass/**/*.scss',      // SASS - all
-    vendor          : document_root + '/sass/vendor',         // SASS - vendor
-    vendor          : document_root + '/sass/vendor/custom'   // SASS - custom
-  }
-};
+
+var toolkit         = '/toolkit/dist',                        // Toolkit framework
+    sourceFiles     = localHost + '/sourcefiles',             // Source files
+    sourceMaps      = '../sourcemaps',                        // Source maps
+    root            = {
+      html : {
+        template    : localHost + '/**/*.html'                // HTML template
+      },
+      css : {
+        defaults    : localHost + '/css',                     // CSS - defaults
+        main        : localHost + '/css/main.css'             // CSS - main
+      },
+      js: {
+        defaults    : localHost + '/js',                      // JS - defaults
+        main        : localHost + '/js/main.js',              // JS - main
+        vendor      : localHost + '/js/vendor'                // JS - vendor
+      },
+      sass: {
+        common      : localHost + '/sass/**/*.scss',          // SASS - common
+        vendor      : localHost + '/sass/vendor'              // SASS - vendor
+      },
+      images: {
+        defaults    : localHost + '/img',                     // Images - defaults
+        source      : sourceFiles + '/img/**/*'               // Images - source
+      },
+      source: {
+        js          : sourceFiles + '/js/**/*',               // Source - JavaScript
+        images      : sourceFiles + '/img/**/*'               // Source - images
+      }
+    };
 
 // -----------------------------------------------------------------------------
-// Packages
-var packages        = {
+// Components
+var components      = {
 
   // JavaScript libraries
-  js_libraries: {
+  jsLibraries: {
     core: [
-      packages + '/jquery/dist/jquery.js',                    // Library
-      packages + '/enquire/dist/enquire.js',                  // Media queries
-      packages + '/smartresize/jquery.debouncedresize.js',    // Debounced resize
-      packages + toolkit + '/js/toolkit/jquery.utilities.js', // Utilities
+      componentPackage + '/jquery/dist/jquery.js',
+      componentPackage + '/enquire/dist/enquire.js',
+      componentPackage + '/smartresize/jquery.debouncedresize.js',
+      componentPackage + toolkit + '/js/toolkit/jquery.utilities.js',
     ],
     features: [
-      packages_custom + '/js/vendor/custom/modernizr.js',     // Feature detection
-      packages + toolkit + '/js/toolkit/ua-parser.js',        // User-agent parser
-      packages + toolkit + '/js/toolkit/ua-detection.js'      // User-agent detection
-    ],
-    plugins: [
-      packages_custom + '/js/vendor/custom/console.js'        // Console
+      componentCustom + '/modernizr/modernizr.js',
+      componentPackage + '/ua-parser-js/src/ua-parser.js',
+      componentPackage + '/ua-detection-js/src/ua-detection.js'
     ],
     polyfills: [
-      packages + '/matchMedia/matchMedia.js',                 // Media queries polyfill
-      packages + '/matchMedia/matchMedia.addListener.js'
-    ]
+      componentPackage + '/matchMedia/matchMedia.js',
+      componentPackage + '/matchMedia/matchMedia.addListener.js'
+    ],
+    plugins: []
   },
 
   // SASS frameworks
-  sass_frameworks: {
+  sassFrameworks: {
     reset: [
-      packages + '/reset-css/index.css'                       // CSS reset
+      componentPackage + '/reset-css/index.css'
     ],
     normalize: [
-      packages + '/normalize-scss/_normalize.scss'            // CSS normalize
+      componentPackage + '/normalize-scss/_normalize.scss'
     ],
     helpers: [
-      packages + toolkit + '/sass/**/*'                       // Function & mixin
+      componentPackage + toolkit + '/sass/**/*'
     ]
   }
 
@@ -86,125 +107,208 @@ var packages        = {
 
 // JavaScript libraries
 gulp.task('build:js.core', function() {
-  return gulp.src(packages.js_libraries.core)
-    .pipe(concat('libraries.core.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.core)                         // Source
+    .pipe(concat('libraries.core.js'))                        // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
 gulp.task('build:js.features', function() {
-  return gulp.src(packages.js_libraries.features)
-    .pipe(concat('libraries.features.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.features)                     // Source
+    .pipe(concat('libraries.features.js'))                    // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
 gulp.task('build:js.polyfills', function() {
-  return gulp.src(packages.js_libraries.polyfills)
-    .pipe(concat('libraries.polyfills.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.polyfills)                    // Source
+    .pipe(concat('libraries.polyfills.js'))                   // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
 gulp.task('build:js.plugins', function() {
-  return gulp.src(packages.js_libraries.plugins)
-    .pipe(concat('libraries.plugins.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.plugins)                      // Source
+    .pipe(concat('libraries.plugins.js'))                     // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Ouput
 });
 
 // SASS reset & normalize
 gulp.task('build:sass.reset', function() {
-  return gulp.src(packages.sass_frameworks.reset)
-    .pipe(rename({prefix: '_', basename: 'reset', extname: '.scss'}))
-    .pipe(gulp.dest(root.sass.vendor));
+  return gulp
+    .src(components.sassFrameworks.reset)                     // Source
+    .pipe(rename({                                            // Rename
+      prefix   : '_',
+      basename : 'reset',
+      extname  : '.scss'
+    }))
+    .pipe(gulp.dest(root.sass.vendor));                       // Output
 });
 
 gulp.task('build:sass.normalize', function() {
-  return gulp.src(packages.sass_frameworks.normalize)
-    .pipe(gulp.dest(root.sass.vendor));
+  return gulp
+    .src(components.sassFrameworks.normalize)                 // Source
+    .pipe(gulp.dest(root.sass.vendor));                       // Output
 });
 
 // SASS function and mixin library
 gulp.task('build:sass.helpers', function() {
-  return gulp.src(packages.sass_frameworks.helpers)
-    .pipe(gulp.dest(root.sass.vendor));
+  return gulp
+    .src(components.sassFrameworks.helpers)                   // Source
+    .pipe(gulp.dest(root.sass.vendor));                       // Output
 });
 // -----------------------------------------------------------------------------
 // Compiling tasks
 
 // SASS
 gulp.task('compile:sass', function() {
-  return gulp.src(root.sass.all)
-    // Source map - initialize
-    .pipe(sourcemaps.init())
-
-    // Compiling
-    .pipe(sass({
-      includePaths     : require('node-sass').includePaths,
+  return gulp
+    .src(root.sass.common)                                    // Source
+    .pipe(sourcemaps.init())                                  // Initializing source maps
+    .pipe(sass({                                              // Compling
       indentedSyntax   : false,
       errLogToConsole  : true,
-      outputStyle      : 'nested'
-    }))
-
-    // Prefix
-    .pipe(autoprefixer({
+      outputStyle      : 'expanded'
+    }).on('error', sass.logError))
+    .pipe(autoprefixer({                                      // Prefixing
       browsers         : ['last 2 versions'],
       cascade          : false
     }))
-
-    // Source map - output
-    .pipe(sourcemaps.write('../maps'))
-
-    // Output
-    .pipe(gulp.dest(root.css.main))
-
-    // Injecting
-    .pipe(browserSync.stream());
+    .pipe(sourcemaps.write(sourceMaps))                       // Writing source maps
+    .pipe(gulp.dest(root.css.defaults))                       // Output
+    .pipe(browserSync.stream())                               // Injecting CSS
+    .pipe(notify('Sass Compiled & Prefixed'));                // Notification
 });
 
 // -----------------------------------------------------------------------------
-// Synchronising file changes
-gulp.task('synchronize:browser', function() {
-  // Initialize
-  browserSync({
-    proxy: url
-  });
+// Optimizing tasks
 
-  // Injecting CSS
-  gulp.watch(root.sass.all, ['compile:sass']);
+// Images
+// Minify PNG, JPEG, GIF and SVG images
+gulp.task('optimize:images', function() {
+  return gulp
+    .src(root.images.source)                                  // Source
+    .pipe(imagemin({                                          // Optimizing
+      progressive : true,
+      svgoPlugins : [{removeViewBox: false}],
+      use         : [pngquant()]
+    }))
+    .pipe(gulp.dest(root.images.defaults))                    // Output
+    .pipe(notify('Image optimized'));                         // Notification
+});
+
+// -----------------------------------------------------------------------------
+// Validation tasks
+
+// HTML
+gulp.task('lint:html', function() {
+  return gulp
+    .src(root.html.template)                                  // Source
+    .pipe(htmlhint('.htmlhintrc'))                            // HTMLHint
+    .pipe(htmlhint.reporter())                                // Default reporter
+    .pipe(notify('HTML validated'));                          // Notification
+});
+
+// CSS
+gulp.task('lint:css', function() {
+  return gulp
+    .src(root.css.main)                                       // Source
+    .pipe(csslint('.csslintrc'))                              // CSSLint
+    .pipe(csslint.reporter())                                 // Default reporter
+    .pipe(notify('CSS validated'));                           // Notification
+});
+
+// JavaScript
+gulp.task('lint:js', function() {
+  return gulp
+    .src(root.js.main)                                        // Source
+    .pipe(jshint('.jshintrc'))                                // JSHint
+    .pipe(jshint.reporter('jshint-stylish'))                  // Stylish reporter for JSHint
+    .pipe(notify('JavaScript validated'));                    // Notification
+});
+
+// -----------------------------------------------------------------------------
+// Live reload & browser syncing
+gulp.task('browser-synchronize', function() {
+  browserSync({
+    proxy: localUrl                                           // Dynamic URL
+  });
+});
+
+// -----------------------------------------------------------------------------
+// Watching file changes
+gulp.task('watch:changes', function() {
+  // Compiling
+  gulp.watch(root.sass.common, ['compile:sass']);             // SASS
 
   // Reloading changes in the browser
-  gulp.watch(root.html.template).on('change', browser_reload);
-  gulp.watch(root.js.main).on('change', browser_reload);
+  gulp.watch(root.html.template, browserReload);              // HTML
+  gulp.watch(root.js.main, browserReload);                    // JavaScript
+});
+
+gulp.task('watch:lint', function() {
+  gulp.watch(root.html.template, ['lint:html']);              // HTML
+  gulp.watch(root.css.main, ['lint:css']);                    // CSS
+  gulp.watch(root.js.main, ['lint:js']);                      // JavaScript
 });
 
 // -----------------------------------------------------------------------------
 // Task runners
 
-// JavaScript libraries
+// Build : JavaScript libraries
 gulp.task('build:js.libraries',
   [
-    'build:js.core',           // Core
-    'build:js.features',       // Features
-    'build:js.polyfills',      // Polyfills
-    'build:js.plugins'         // Plugins
+    'build:js.core',                                          // Core
+    'build:js.features',                                      // Features
+    'build:js.polyfills',                                     // Polyfills
+    'build:js.plugins'                                        // Plugins
   ]
 );
 
-// SASS frameworks
+// Build : SASS frameworks
 gulp.task('build:sass.libraries',
   [
-    'build:sass.reset',        // Reset
-    'build:sass.normalize',    // Normalize
-    'build:sass.helpers'       // Function & mixin
+    'build:sass.reset',                                       // Reset
+    'build:sass.normalize',                                   // Normalize
+    'build:sass.helpers'                                      // Function & mixin
+  ]
+);
+
+// Build : All
+gulp.task('build',
+  [
+    'build:js.libraries',                                     // JavaScript libraries
+    'build:sass.libraries'                                    // SASS frameworks
+  ]
+);
+
+// Optimizing : All
+gulp.task('optimize',
+  [
+    'optimize:images'                                         // Images
+  ]
+);
+
+// Linting : All
+gulp.task('lint',
+  [
+    'lint:html',                                              // HTML
+    'lint:css',                                               // CSS
+    'lint:js'                                                 // JavaScript
   ]
 );
 
 // Default
 gulp.task('default',
   [
-    'compile:sass',            // Compiling SASS
-    'synchronize:browser'      // Synchronising file changes
+    'compile:sass',                                           // Compiling SASS
+    'browser-synchronize',                                    // Live reload & browser syncing
+    'watch:changes'                                           // Watching file changes
+    // 'watch:lint'                                           // Linting
   ]
 );
