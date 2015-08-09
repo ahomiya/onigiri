@@ -179,9 +179,9 @@ gulp.task('compile:sass', function() {
       browsers         : ['last 2 versions'],
       cascade          : false
     }))
+    .pipe(browserSync.stream())                               // Injecting CSS
     .pipe(sourcemaps.write(sourceMaps))                       // Writing source maps
     .pipe(gulp.dest(root.css.defaults))                       // Output
-    .pipe(browserSync.stream())                               // Injecting CSS
     .pipe(notify('Sass Compiled & Prefixed'));                // Notification
 });
 
