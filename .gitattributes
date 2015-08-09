@@ -1,0 +1,8 @@
+# Linux line breaks needed
+* text=auto
+*.sh text eol=lf
+
+# Binary files
+*.map binary
+*.min.js binary
+*.min.css binary
