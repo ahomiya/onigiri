@@ -1,5 +1,6 @@
 // Plugin dependencies
 var gulp            = require('gulp'),                        // Gulp
+    notify          = require('gulp-notify'),                 // Notification
     sourcemaps      = require('gulp-sourcemaps'),             // Source maps
     autoprefixer    = require('gulp-autoprefixer'),           // Prefix CSS
     sass            = require('gulp-sass'),                   // Sass
@@ -106,80 +107,82 @@ var components      = {
 
 // JavaScript libraries
 gulp.task('build:js.core', function() {
-  return gulp.src(components.jsLibraries.core)
-    .pipe(concat('libraries.core.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.core)                         // Source
+    .pipe(concat('libraries.core.js'))                        // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
 gulp.task('build:js.features', function() {
-  return gulp.src(components.jsLibraries.features)
-    .pipe(concat('libraries.features.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.features)                     // Source
+    .pipe(concat('libraries.features.js'))                    // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
 gulp.task('build:js.polyfills', function() {
-  return gulp.src(components.jsLibraries.polyfills)
-    .pipe(concat('libraries.polyfills.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.polyfills)                    // Source
+    .pipe(concat('libraries.polyfills.js'))                   // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
 gulp.task('build:js.plugins', function() {
-  return gulp.src(components.jsLibraries.plugins)
-    .pipe(concat('libraries.plugins.js'))
-    // .pipe(uglify())
-    .pipe(gulp.dest(root.js.vendor));
+  return gulp
+    .src(components.jsLibraries.plugins)                      // Source
+    .pipe(concat('libraries.plugins.js'))                     // Concatenating
+    // .pipe(uglify())                                        // Minifying
+    .pipe(gulp.dest(root.js.vendor));                         // Ouput
 });
 
 // SASS reset & normalize
 gulp.task('build:sass.reset', function() {
-  return gulp.src(components.sassFrameworks.reset)
-    .pipe(rename({prefix: '_', basename: 'reset', extname: '.scss'}))
-    .pipe(gulp.dest(root.sass.vendor));
+  return gulp
+    .src(components.sassFrameworks.reset)                     // Source
+    .pipe(rename({                                            // Rename
+      prefix   : '_',
+      basename : 'reset',
+      extname  : '.scss'
+    }))
+    .pipe(gulp.dest(root.sass.vendor));                       // Output
 });
 
 gulp.task('build:sass.normalize', function() {
-  return gulp.src(components.sassFrameworks.normalize)
-    .pipe(gulp.dest(root.sass.vendor));
+  return gulp
+    .src(components.sassFrameworks.normalize)                 // Source
+    .pipe(gulp.dest(root.sass.vendor));                       // Output
 });
 
 // SASS function and mixin library
 gulp.task('build:sass.helpers', function() {
-  return gulp.src(components.sassFrameworks.helpers)
-    .pipe(gulp.dest(root.sass.vendor));
+  return gulp
+    .src(components.sassFrameworks.helpers)                   // Source
+    .pipe(gulp.dest(root.sass.vendor));                       // Output
 });
 // -----------------------------------------------------------------------------
 // Compiling tasks
 
 // SASS
 gulp.task('compile:sass', function() {
-  return gulp.src(root.sass.common)
-    // Source map - initialize
-    .pipe(sourcemaps.init())
-
-    // Compiling
-    .pipe(sass({
+  return gulp
+    .src(root.sass.common)                                    // Source
+    .pipe(sourcemaps.init())                                  // Initializing source maps
+    .pipe(sass({                                              // Compling
       indentedSyntax   : false,
       errLogToConsole  : true,
       outputStyle      : 'expanded'
     }).on('error', sass.logError))
-
-    // Prefix
-    .pipe(autoprefixer({
+    .pipe(autoprefixer({                                      // Prefixing
       browsers         : ['last 2 versions'],
       cascade          : false
     }))
-
-    // Source map - output
-    .pipe(sourcemaps.write(sourceMaps))
-
-    // Output
-    .pipe(gulp.dest(root.css.defaults))
-
-    // Injecting CSS
-    .pipe(browserSync.stream());
+    .pipe(sourcemaps.write(sourceMaps))                       // Writing source maps
+    .pipe(gulp.dest(root.css.defaults))                       // Output
+    .pipe(browserSync.stream())                               // Injecting CSS
+    .pipe(notify('Sass Compiled & Prefixed'));                // Notification
 });
 
 // -----------------------------------------------------------------------------
@@ -188,14 +191,15 @@ gulp.task('compile:sass', function() {
 // Images
 // Minify PNG, JPEG, GIF and SVG images
 gulp.task('optimize:images', function() {
-  gulp
-    .src(root.images.source)
-    .pipe(imagemin({
+  return gulp
+    .src(root.images.source)                                  // Source
+    .pipe(imagemin({                                          // Optimizing
       progressive : true,
       svgoPlugins : [{removeViewBox: false}],
       use         : [pngquant()]
     }))
-    .pipe(gulp.dest(root.images.defaults));
+    .pipe(gulp.dest(root.images.defaults))                    // Output
+    .pipe(notify('Image optimized'));                         // Notification
 });
 
 // -----------------------------------------------------------------------------
@@ -203,23 +207,29 @@ gulp.task('optimize:images', function() {
 
 // HTML
 gulp.task('lint:html', function() {
-  return gulp.src(root.html.template)
+  return gulp
+    .src(root.html.template)                                  // Source
     .pipe(htmlhint('.htmlhintrc'))                            // HTMLHint
     .pipe(htmlhint.reporter())                                // Default reporter
+    .pipe(notify('HTML validated'));                          // Notification
 });
 
 // CSS
 gulp.task('lint:css', function() {
-  return gulp.src(root.css.main)
+  return gulp
+    .src(root.css.main)                                       // Source
     .pipe(csslint('.csslintrc'))                              // CSSLint
-    .pipe(csslint.reporter());                                // Default reporter
+    .pipe(csslint.reporter())                                 // Default reporter
+    .pipe(notify('CSS validated'));                           // Notification
 });
 
 // JavaScript
 gulp.task('lint:js', function() {
-  return gulp.src(root.js.main)
+  return gulp
+    .src(root.js.main)                                        // Source
     .pipe(jshint('.jshintrc'))                                // JSHint
     .pipe(jshint.reporter('jshint-stylish'))                  // Stylish reporter for JSHint
+    .pipe(notify('JavaScript validated'));                    // Notification
 });
 
 // -----------------------------------------------------------------------------
@@ -265,7 +275,7 @@ gulp.task('build:sass.libraries',
   [
     'build:sass.reset',                                       // Reset
     'build:sass.normalize',                                   // Normalize
-    'build:sass.helpers',                                     // Function & mixin
+    'build:sass.helpers'                                      // Function & mixin
   ]
 );
 
