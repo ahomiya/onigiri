@@ -75,7 +75,7 @@ var components      = {
       componentPackage + toolkit + '/js/toolkit/jquery.utilities.js',
     ],
     features: [
-      componentCustom + '/modernizr/modernizr.js',
+      componentCustom  + '/modernizr/modernizr.js',
       componentPackage + '/ua-parser-js/src/ua-parser.js',
       componentPackage + '/ua-detection-js/src/ua-detection.js'
     ],
@@ -203,7 +203,7 @@ gulp.task('optimize:images', function() {
 });
 
 // -----------------------------------------------------------------------------
-// Validation tasks
+// Linting tasks
 
 // HTML
 gulp.task('lint:html', function() {
