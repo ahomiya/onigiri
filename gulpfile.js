@@ -84,19 +84,6 @@ var components      = {
       componentPackage + '/matchMedia/matchMedia.addListener.js'
     ],
     plugins: []
-  },
-
-  // SASS frameworks
-  sassFrameworks: {
-    reset: [
-      componentPackage + '/reset-css/index.css'
-    ],
-    normalize: [
-      componentPackage + '/normalize-scss/_normalize.scss'
-    ],
-    helpers: [
-      componentPackage + toolkit + '/sass/**/*'
-    ]
   }
 
 };
@@ -138,30 +125,6 @@ gulp.task('build:js.plugins', function() {
     .pipe(gulp.dest(root.js.vendor));                         // Ouput
 });
 
-// SASS reset & normalize
-gulp.task('build:sass.reset', function() {
-  return gulp
-    .src(components.sassFrameworks.reset)                     // Source
-    .pipe(rename({                                            // Rename
-      prefix   : '_',
-      basename : 'reset',
-      extname  : '.scss'
-    }))
-    .pipe(gulp.dest(root.sass.vendor));                       // Output
-});
-
-gulp.task('build:sass.normalize', function() {
-  return gulp
-    .src(components.sassFrameworks.normalize)                 // Source
-    .pipe(gulp.dest(root.sass.vendor));                       // Output
-});
-
-// SASS function and mixin library
-gulp.task('build:sass.helpers', function() {
-  return gulp
-    .src(components.sassFrameworks.helpers)                   // Source
-    .pipe(gulp.dest(root.sass.vendor));                       // Output
-});
 // -----------------------------------------------------------------------------
 // Compiling tasks
 
@@ -261,7 +224,7 @@ gulp.task('watch:lint', function() {
 // Task runners
 
 // Build : JavaScript libraries
-gulp.task('build:js.libraries',
+gulp.task('build:js',
   [
     'build:js.core',                                          // Core
     'build:js.features',                                      // Features
@@ -270,20 +233,10 @@ gulp.task('build:js.libraries',
   ]
 );
 
-// Build : SASS frameworks
-gulp.task('build:sass.libraries',
-  [
-    'build:sass.reset',                                       // Reset
-    'build:sass.normalize',                                   // Normalize
-    'build:sass.helpers'                                      // Function & mixin
-  ]
-);
-
 // Build : All
 gulp.task('build',
   [
-    'build:js.libraries',                                     // JavaScript libraries
-    'build:sass.libraries'                                    // SASS frameworks
+    'build:js'                                                // JavaScript libraries
   ]
 );
 

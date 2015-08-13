@@ -3,7 +3,7 @@
 // To define a consistent foundation across browsers to build the site on.
 // -----------------------------------------------------------------------------
 // Framework
-@import "vendor/reset";
+@import "./components/package/reset-css/index";
 
 // Overriding
 
@@ -14,6 +14,6 @@
 // styling of HTML elements.
 // -----------------------------------------------------------------------------
 // Framework
-@import "vendor/normalize";
+@import "./components/package/normalize-scss/normalize";
 
 // Overriding

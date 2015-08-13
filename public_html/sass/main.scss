@@ -18,7 +18,9 @@
 // to make writing CSS files easier and faster.
 
 // Function and mixin libraries
-@import "vendor/toolkit";             // Toolkit
+
+// Toolkit
+@import "./components/package/toolkit/dist/sass/toolkit";
 
 // Front-end frameworks
 // A collection of tools for creating websites and web applications.
