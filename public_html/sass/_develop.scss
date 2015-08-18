@@ -3,93 +3,13 @@
 
 // Table of contents
 .page-index {
-  padding-top: 25px;
 
-  .heading-1 { margin-bottom: 25px; }
-
-  .heading-2 {
-    border-top: #aaa dotted 1px;
-    color: #005ca9;
-    font-size: 18px;
-    margin-bottom: 15px;
-    padding-top: 15px;
-    &:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-  }
-
-  ul {
-    margin-bottom: 15px;
-    li { line-height: 24px; }
-  }
-
-  a {
-    color: #333;
-    &:hover { color: #005ca9 }
-  }
 }
 
 // -----------------------------------------------------------------------------
 // Prototype components
 .page-components {
-  padding-top: 25px;
 
-  .script {
-    color: red;
-    font-size: 10px;
-    position: relative;
-    top: -12px;
-  }
-
-  .heading-1 { margin-bottom: 25px; }
-
-  .heading-2 {
-    border-top: 1px solid #333;
-    color: #005ca9;
-    margin-bottom: 25px;
-    padding-top: 25px;
-  }
-
-  .heading-3 {
-    color: red;
-    margin-bottom: 15px;
-  }
-
-  .heading-4 {
-    color: green;
-    font-size: 20px;
-    margin: 15px 0;
-  }
-
-  .component-section {
-    border-top: 1px dotted #ccc;
-    margin-bottom: 25px;
-    padding-top: 25px;
-    &:first-child,
-    &:first-of-type {
-      border-top: none;
-    }
-  }
-
-  .component-element {
-
-  }
-
-  .footnote {
-    border-top: 1px solid #333;
-    padding: 25px 0;
-    li {
-      font-size: 13px;
-      line-height: 20px;
-    }
-    .script {
-      display: inline-block;
-      font-size: 13px;
-      min-width: 15px;
-      top: 0;
-    }
-  }
 }
 
 // -----------------------------------------------------------------------------
