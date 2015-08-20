@@ -24,17 +24,16 @@
 // A collection of tools for creating websites and web applications.
 // @import ".components/package/placeholder";
 
-// Overriding
-@import "vendor";                     // Overriding
+// 3rd party plugins
+// @import ".components/package/placeholder";
+
+// Vendor
+@import "vendor/variables";           // Variables & configurations
 
 // -----------------------------------------------------------------------------
-// Core
-// Represents the tools and materials required at the ground level of a project.
-// It provides the initial setup for an application.
+// Global variabls & settings
 
-@import "core/settings";              // Settings
-@import "core/normalization";         // CSS Resets and Normailization
-@import "core/base";                  // Base-level styles
+@import "settings";                   // Settings
 
 // -----------------------------------------------------------------------------
 // Helpers
@@ -42,8 +41,16 @@
 
 @import "helpers/functions";          // Functions
 @import "helpers/mixins";             // Mixins
-@import "helpers/placeholder";        // Placeholders
+@import "helpers/placeholders";       // Placeholders
 @import "helpers/utilities";          // Utilities
+
+// -----------------------------------------------------------------------------
+// Core
+// Represents the tools and materials required at the ground level of a project.
+// It provides the initial setup for an application.
+
+@import "core/normalization";         // CSS Resets and Normailization
+@import "core/base";                  // Base-level styles
 
 // -----------------------------------------------------------------------------
 // Layout
@@ -80,5 +87,4 @@
 // -----------------------------------------------------------------------------
 // Quick styles
 
-@import "develop";                    // Development
 @import "inbox";                      // Inbox

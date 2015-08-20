@@ -23,10 +23,42 @@
   src: url("../fonts/Caviar.Dreams-Italic.ttf");
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,7 +80,6 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -58,16 +89,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -583,40 +618,42 @@ th {
   text-shadow: none;
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+::-webkit-input-placeholder {
+  position: relative;
+  top: 2px;
+  top: 0;
+  color: #666;
+  font-family: Font-Regular;
+  font-size: 11px;
+  opacity: 1;
 }
 
-.hidden {
-  display: none !important;
-  visibility: hidden;
+::-moz-placeholder {
+  color: #666;
+  font-family: Font-Regular;
+  font-size: 11px;
+  opacity: 1;
 }
 
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+:-moz-placeholder {
+  color: #666;
+  font-family: Font-Regular;
+  font-size: 11px;
+  opacity: 1;
 }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
+input:-ms-input-placeholder {
+  color: #666;
+  font-family: Font-Regular;
+  font-size: 11px;
+  opacity: 1;
 }
 
-.invisible {
-  visibility: hidden;
+[placeholder].placeholder {
+  color: #666;
+  font-family: Font-Regular;
+  font-size: 11px;
+  opacity: 1;
 }
 
 .readme p {
