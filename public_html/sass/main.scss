@@ -11,65 +11,74 @@
  */
 
 // -----------------------------------------------------------------------------
-// FRAMEWORKS
+// Frameworks
 
 // CSS authoring framework
 // Streamlines development by providing a number of utilities and tools
 // to make writing CSS files easier and faster.
 
 // Function and mixin libraries
-
-// Toolkit
 @import "./components/package/toolkit/dist/sass/toolkit";
 
 // Front-end frameworks
 // A collection of tools for creating websites and web applications.
-// @import "vendor/placeholder";      // Placeholder
+// @import ".components/package/placeholder";
 
 // Overriding
 @import "vendor";                     // Overriding
 
 // -----------------------------------------------------------------------------
-// CORE
+// Core
 // Represents the tools and materials required at the ground level of a project.
 // It provides the initial setup for an application.
 
 @import "core/settings";              // Settings
-@import "core/helpers";               // Helpers
 @import "core/normalization";         // CSS Resets and Normailization
 @import "core/base";                  // Base-level styles
-@import "core/utilities";             // Utilities
-@import "core/content";               // Content
 
 // -----------------------------------------------------------------------------
-// STRUCTURE
-// A project’s UI elements that are too specialized for use across
-// multiple sites.
+// Helpers
+// SASS functions, mixins, and placeholder classes.
 
-@import "structure/grid";             // Grid
-@import "structure/wrapper";          // Wrapper
-
-// -----------------------------------------------------------------------------
-// LAYOUT
-// A higher level of abstraction for components.
-// This applies layout (margin, padding, sizing, positioning).
-// Layouts hold one or more components together.
-
-@import "layout/template";            // Template
+@import "helpers/functions";          // Functions
+@import "helpers/mixins";             // Mixins
+@import "helpers/placeholder";        // Placeholders
+@import "helpers/utilities";          // Utilities
 
 // -----------------------------------------------------------------------------
-// COMPONENTS
-// The main functional units that display in template.
-// They can be seen as mini-applications.
+// Layout
+// A Layout rules divide the page into sections. Layouts hold one or more
+// components or modules together.
 
-@import "components/main";            // Main content
-@import "components/header";          // Header
-@import "components/footer";          // Footer
-@import "components/navbar";          // Navbar
-@import "components/type";            // Typography
+@import "layout/grid";                // Grid
+@import "layout/wrapper";             // Wrapper
+@import "layout/main";                // Main content
+@import "layout/header";              // Header
+@import "layout/footer";              // Footer
 
 // -----------------------------------------------------------------------------
-// QUICK STYLES
+// Components
+// Styles for specific user interface elements which are broken down into
+// different component files. The component styles are purely interface driven
+// and have nothing to do with the core business logic of the website.
+
+@import "components/typography";      // Typography
+
+// -----------------------------------------------------------------------------
+// Modules
+// Styles for different sections of a page, which are determined by
+// business needs.
+
+@import "modules/navbar";             // Navbar
+
+// -----------------------------------------------------------------------------
+// Pages
+// Page-specific styles
+
+@import "pages/index";                // Index
+
+// -----------------------------------------------------------------------------
+// Quick styles
 
 @import "develop";                    // Development
 @import "inbox";                      // Inbox
