@@ -1,0 +1,20 @@
+// Mixins
+// Define patterns of property value pairs, which can then be reused in
+// other rulesets.
+// -----------------------------------------------------------------------------
+
+// Inline-block container
+@mixin inlineblock-container {
+  font-size: 0;
+}
+
+
+// HTML5 Placeholder
+@mixin placeholder($color) {
+  color: $color;
+  font: {
+    family: $font-style-regular;
+    size: 11px;
+  }
+  opacity: 1;
+}

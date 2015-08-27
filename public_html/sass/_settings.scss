@@ -1,7 +1,8 @@
-// SETTINGS
+// Settings and Configurations
 // Grouping all the app-wide settings into one file allows newcomers to
 // the project the means to find out what's available to them quickly.
 // -----------------------------------------------------------------------------
+
 // Paths
 $path-reference         : relative;
 $path-package           : "./component/package/";
@@ -44,10 +45,11 @@ $path-font              : "fonts";
   font-family: "Font-Italic";
   src: font-url("Caviar.Dreams-Italic.ttf");
 }
+
 // -----------------------------------------------------------------------------
 // Configurable variables
 // Declar variables that can beused throughout stylesheets.
-// -----------------------------------------------------------------------------
+
 // Fonts
 $font-style-regular     : Font-Regular;
 $font-style-bold        : Font-Bold;

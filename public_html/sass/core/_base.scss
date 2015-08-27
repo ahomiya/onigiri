@@ -1,10 +1,12 @@
-// BASE STYLES
-// A Base rule is applied to an element using an element selector.
-// It is defining the default styling for how that element should look
-// in all occurrences on the page.
-// -----------------------------------------------------------------------------
-// Defaults
+// Base Styles
 
+// A Base rule is applied to an element using an element selector,
+// a descendent selector, or a child selector, along with any pseudo-classes.
+// It is defining the default styling for how that element should look in
+// all occurrences on the page.
+// -----------------------------------------------------------------------------
+
+// Defaults
 // Tell the browser to consider border and padding as part of the width of
 // an object rather than as an addition.
 * {
@@ -31,6 +33,7 @@ body {
 	color: $color-base;
 	line-height: $line-height-base;
 }
+
 // -----------------------------------------------------------------------------
 // Links
 a {
@@ -87,12 +90,19 @@ mark { background-color: transparent; }
 // -----------------------------------------------------------------------------
 // Embedded content
 img { vertical-align: middle; }
+
 // -----------------------------------------------------------------------------
 // Grouping content
-hr {}
+hr {
+
+}
+
 // -----------------------------------------------------------------------------
 // Forms
-form {}
+form {
+	
+}
+
 // -----------------------------------------------------------------------------
 // Tables
 table {
@@ -101,6 +111,7 @@ table {
 }
 
 th { text-align: left; }
+
 // -----------------------------------------------------------------------------
 // Pseudo-elements
 ::-moz-selection {
@@ -112,3 +123,21 @@ th { text-align: left; }
   background: $color-selection;
   text-shadow: none;
 }
+
+// -----------------------------------------------------------------------------
+// Placeholder
+$placeholder-color-normal   : #666;
+$placeholder-color-error    : red;
+$placeholder-color-disabled : #999;
+
+::-webkit-input-placeholder {                                                     // WebKit
+  position: relative;
+  top: 2px;                                                                       // iOS 7
+  top: 0;
+  @include placeholder($placeholder-color-normal);
+}
+
+::-moz-placeholder          { @include placeholder($placeholder-color-normal); }  // Firefox 19+
+:-moz-placeholder           { @include placeholder($placeholder-color-normal); }  // Firefox 18-
+input:-ms-input-placeholder { @include placeholder($placeholder-color-normal); }  // IE10+
+[placeholder].placeholder   { @include placeholder($placeholder-color-normal); }  // IE9

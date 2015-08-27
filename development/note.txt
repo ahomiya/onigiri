@@ -1,0 +1,43 @@
+// Sass Architecture
+
+// Base
+// A Base rule is applied to an element using an element selector,
+// a descendent selector, or a child selector, along with any pseudo-classes.
+// It is defining the default styling for how that element should look in
+// all occurrences on the page.
+
+// https://smacss.com/book/type-base
+// -----------------------------------------------------------------------------
+// CSS Resets
+// A CSS Reset is a set of Base styles designed to strip out or reset
+// the default properties. Its purpose is to define a consistent foundation
+// across browsers to build the site on.
+
+// https://smacss.com/book/type-base
+// -----------------------------------------------------------------------------
+// Components
+// Styles for specific user interface elements which are broken down into
+// different component files.
+// The component styles are purely interface driven and have nothing to do with
+// the core business logic of the website.
+
+// Each component should be designed to exist as a standalone component.
+// Component can easily be moved to different parts of the layout
+// without breaking.
+
+// https://smacss.com/book/type-module
+// http://learn.shayhowe.com/advanced-html-css/performance-organization/
+// -----------------------------------------------------------------------------
+// Modules
+// Styles for different sections of a page, which are determined by
+// business needs.
+
+// https://smacss.com/book/type-module
+// http://learn.shayhowe.com/advanced-html-css/performance-organization/
+// -----------------------------------------------------------------------------
+// Layout
+// A Layout rules divide the page into sections. Layouts hold one or more
+// components or modules together.
+
+// https://smacss.com/book/type-layout
+// -----------------------------------------------------------------------------
