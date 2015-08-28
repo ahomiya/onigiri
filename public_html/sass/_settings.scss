@@ -4,11 +4,11 @@
 // -----------------------------------------------------------------------------
 
 // Paths
-$path-reference         : relative;
-$path-package           : "./component/package/";
-$path-vendor            : "vendor/";
-$path-image             : "img";
-$path-font              : "fonts";
+$path-reference              : relative;
+$path-package                : "./component/package/";
+$path-vendor                 : "vendor/";
+$path-image                  : "img";
+$path-font                   : "fonts";
 
 // URLs
 @function reference-url($path-reference) {
@@ -47,115 +47,38 @@ $path-font              : "fonts";
 }
 
 // -----------------------------------------------------------------------------
-// Configurable variables
-// Declar variables that can beused throughout stylesheets.
-
-// Fonts
-$font-style-regular     : Font-Regular;
-$font-style-bold        : Font-Bold;
-$font-style-light       : Font-Light;
-$font-style-italic      : Font-Italic;
-
-$font-family-websafe    : Arial, Helvetica, sans-serif;
-
-$font-style-base        : $font-style-regular;
-$font-size-base         : 16px;
-
-
-// Line-height
-$line-height-base       : 20px;
-
-
-// Grid
-$grid-width-min         : 320px;
-$grid-width-max         : 1920px;
-
-$grid-width-small       : 100%;
-$grid-width-medium      : 768px;
-$grid-width-large       : 1280px;
-$grid-width-xlarge      : 1440px;
-$grid-width-xxlarge     : 1920px;
-
-$grid-padding-small     : 20px;
-$grid-padding-medium    : 20px;
-$grid-padding-large     : 20px;
-$grid-padding-xlarge    : 20px;
-$grid-padding-xxlarge   : 20px;
-
-$grid-gutter-small      : 40px;
-$grid-gutter-medium     : 40px;
-$grid-gutter-large      : 40px;
-$grid-gutter-xlarge     : 40px;
-$grid-gutter-xxlarge    : 40px;
-
-$grid-column-small      : 12;
-$grid-column-medium     : 12;
-$grid-column-large      : 12;
-$grid-column-xlarge     : 12;
-$grid-column-xxlarge    : 12;
-
-$grid-breakpoint-small  : 320px;
-$grid-breakpoint-medium : 768px;
-$grid-breakpoint-large  : 1280px;
-$grid-breakpoint-xlarge : 1440px;
-$grid-breakpoint-xxlarge: 1920px;
-
-
-// Colors
-$color-base             : #666;
-$color-light            : #999;
-$color-bright           : #fff;
-$color-primary          : #000;
-$color-highlight        : #bbb;
-$color-selection        : #b3d4fc;
-
-
-// Backgrounds
-$bkg-color-base         : #fff;
-$bkg-color-primary      : #000;
-$bkg-color-highlight    : #bbb;
-
-
-// Links
-$link-color-normal      : #666;
-$link-color-hover       : #000;
-$link-color-active      : #000;
-$link-bkg-normal        : #fff;
-$link-bkg-hover         : #fff;
-$link-bkg-active        : #fff;
-
 
 // OS
-$os-mac                 : ".OS-Mac &";
-$os-windows             : ".OS-Windows &";
-$os-ios                 : ".OS-iOS &";
-$os-android             : ".OS-Android &";
+$os-mac                      : ".OS-Mac &";
+$os-windows                  : ".OS-Windows &";
+$os-ios                      : ".OS-iOS &";
+$os-android                  : ".OS-Android &";
 
 
 // Browsers
-$browser-chrome         : ".Browser-Chrome &";
-$browser-safari         : ".Browser-Safari &";
-$browser-firefox        : ".Browser-Firefox &";
-$browser-ie             : ".Browser-IE &";
-$browser-ie-08          : ".Browser-IE8 &";
-$browser-ie-09          : ".Browser-IE9 &";
-$browser-ie-10          : ".Browser-IE10 &";
-$browser-ie-11          : ".Browser-IE11 &";
-$browser-legacy         : ".Browser-Legacy &";
-$browser-android        : ".Browser-Android &";
+$browser-chrome              : ".Browser-Chrome &";
+$browser-safari              : ".Browser-Safari &";
+$browser-firefox             : ".Browser-Firefox &";
+$browser-ie                  : ".Browser-IE &";
+$browser-ie-08               : ".Browser-IE8 &";
+$browser-ie-09               : ".Browser-IE9 &";
+$browser-ie-10               : ".Browser-IE10 &";
+$browser-ie-11               : ".Browser-IE11 &";
+$browser-legacy              : ".Browser-Legacy &";
+$browser-android             : ".Browser-Android &";
 
 
 // Devices
-$device-mouse           : ".no-touch &";
-$device-touch           : ".touch &";
-$device-tablet          : ".Device-Tablet &";
-$device-mobile          : ".Device-Mobile &";
-$device-iphone          : ".Device-iPhone &";
-$device-ipad            : ".Device-iPad &";
-$device-ipod            : ".Device-iPod &";
-$device-s4              : ".Device-S4 &";
-$device-s5              : ".Device-S5 &";
+$device-mouse                : ".no-touch &";
+$device-touch                : ".touch &";
+$device-tablet               : ".Device-Tablet &";
+$device-mobile               : ".Device-Mobile &";
+$device-iphone               : ".Device-iPhone &";
+$device-ipad                 : ".Device-iPad &";
+$device-ipod                 : ".Device-iPod &";
+$device-s4                   : ".Device-S4 &";
+$device-s5                   : ".Device-S5 &";
 
 
 // Ratios
-$ratio-retina           : 2;
+$ratio-retina                : 2;
