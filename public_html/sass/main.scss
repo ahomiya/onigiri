@@ -36,11 +36,16 @@
 @import "settings";                   // Settings
 
 // -----------------------------------------------------------------------------
-// Helpers
-// SASS functions, mixins, and placeholder classes.
+// Functions
+// Make reusable logic more useful.
+@import "helpers/functions/global";   // Functions
 
-@import "helpers/functions";          // Functions
-@import "helpers/mixins";             // Mixins
+// Mixins
+// Define patterns of property value pairs, which can then be reused in
+// other rulesets.
+@import "helpers/mixins/global";      // Global
+
+// Placeholders & utilitie classes
 @import "helpers/placeholders";       // Placeholders
 @import "helpers/utilities";          // Utilities
 
