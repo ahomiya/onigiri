@@ -70,19 +70,29 @@
 @import "layout/footer";              // Footer
 
 // -----------------------------------------------------------------------------
+// Content
+// Styles for displaying content with some of the most commonly used
+// HTML elements
+
+@import "content/typography";         // Typography
+@import "content/images";             // Images
+@import "content/tables";             // Tables
+@import "content/figures";            // Figures
+
+// -----------------------------------------------------------------------------
 // Components
 // Styles for specific user interface elements which are broken down into
 // different component files. The component styles are purely interface driven
 // and have nothing to do with the core business logic of the website.
 
-@import "components/typography";      // Typography
+@import "components/navbar";          // Navbar
 
 // -----------------------------------------------------------------------------
 // Modules
 // Styles for different sections of a page, which are determined by
 // business needs.
 
-@import "modules/navbar";             // Navbar
+@import "modules/navigation";         // Navigation
 
 // -----------------------------------------------------------------------------
 // Pages
