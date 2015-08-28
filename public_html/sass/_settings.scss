@@ -4,11 +4,11 @@
 // -----------------------------------------------------------------------------
 
 // Paths
-$path-reference         : relative;
-$path-package           : "./component/package/";
-$path-vendor            : "vendor/";
-$path-image             : "img";
-$path-font              : "fonts";
+$path-reference              : relative;
+$path-package                : "./component/package/";
+$path-vendor                 : "vendor/";
+$path-image                  : "img";
+$path-font                   : "fonts";
 
 // URLs
 @function reference-url($path-reference) {
@@ -49,36 +49,36 @@ $path-font              : "fonts";
 // -----------------------------------------------------------------------------
 
 // OS
-$os-mac                 : ".OS-Mac &";
-$os-windows             : ".OS-Windows &";
-$os-ios                 : ".OS-iOS &";
-$os-android             : ".OS-Android &";
+$os-mac                      : ".OS-Mac &";
+$os-windows                  : ".OS-Windows &";
+$os-ios                      : ".OS-iOS &";
+$os-android                  : ".OS-Android &";
 
 
 // Browsers
-$browser-chrome         : ".Browser-Chrome &";
-$browser-safari         : ".Browser-Safari &";
-$browser-firefox        : ".Browser-Firefox &";
-$browser-ie             : ".Browser-IE &";
-$browser-ie-08          : ".Browser-IE8 &";
-$browser-ie-09          : ".Browser-IE9 &";
-$browser-ie-10          : ".Browser-IE10 &";
-$browser-ie-11          : ".Browser-IE11 &";
-$browser-legacy         : ".Browser-Legacy &";
-$browser-android        : ".Browser-Android &";
+$browser-chrome              : ".Browser-Chrome &";
+$browser-safari              : ".Browser-Safari &";
+$browser-firefox             : ".Browser-Firefox &";
+$browser-ie                  : ".Browser-IE &";
+$browser-ie-08               : ".Browser-IE8 &";
+$browser-ie-09               : ".Browser-IE9 &";
+$browser-ie-10               : ".Browser-IE10 &";
+$browser-ie-11               : ".Browser-IE11 &";
+$browser-legacy              : ".Browser-Legacy &";
+$browser-android             : ".Browser-Android &";
 
 
 // Devices
-$device-mouse           : ".no-touch &";
-$device-touch           : ".touch &";
-$device-tablet          : ".Device-Tablet &";
-$device-mobile          : ".Device-Mobile &";
-$device-iphone          : ".Device-iPhone &";
-$device-ipad            : ".Device-iPad &";
-$device-ipod            : ".Device-iPod &";
-$device-s4              : ".Device-S4 &";
-$device-s5              : ".Device-S5 &";
+$device-mouse                : ".no-touch &";
+$device-touch                : ".touch &";
+$device-tablet               : ".Device-Tablet &";
+$device-mobile               : ".Device-Mobile &";
+$device-iphone               : ".Device-iPhone &";
+$device-ipad                 : ".Device-iPad &";
+$device-ipod                 : ".Device-iPod &";
+$device-s4                   : ".Device-S4 &";
+$device-s5                   : ".Device-S5 &";
 
 
 // Ratios
-$ratio-retina           : 2;
+$ratio-retina                : 2;
