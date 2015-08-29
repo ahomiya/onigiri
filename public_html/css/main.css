@@ -513,7 +513,7 @@ th {
 }
 
 html {
-  font-family: Font-Regular;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: normal;
@@ -564,12 +564,12 @@ em {
 
 b,
 strong {
-  font-family: Font-Bold;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 i,
 em {
-  font-family: Font-Italic;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 small {
@@ -608,35 +608,35 @@ th {
   top: 2px;
   top: 0;
   color: #666;
-  font-family: Font-Regular;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   opacity: 1;
 }
 
 ::-moz-placeholder {
   color: #666;
-  font-family: Font-Regular;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   opacity: 1;
 }
 
 :-moz-placeholder {
   color: #666;
-  font-family: Font-Regular;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   opacity: 1;
 }
 
 input:-ms-input-placeholder {
   color: #666;
-  font-family: Font-Regular;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   opacity: 1;
 }
 
 [placeholder].placeholder {
   color: #666;
-  font-family: Font-Regular;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   opacity: 1;
 }
