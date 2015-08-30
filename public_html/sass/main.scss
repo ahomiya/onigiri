@@ -39,16 +39,16 @@
 // -----------------------------------------------------------------------------
 // Functions
 // Make reusable logic more useful.
+
 @import "functions/global";           // Functions
 
+// -----------------------------------------------------------------------------
 // Mixins
 // Define patterns of property value pairs, which can then be reused in
 // other rulesets.
-@import "mixins/global";              // Global
 
-// Placeholders & utilitie classes
-@import "helpers/placeholders";       // Placeholders
-@import "helpers/utilities";          // Utilities
+// Utilities
+@import "mixins/global";              // Global
 
 // -----------------------------------------------------------------------------
 // Core
@@ -57,6 +57,12 @@
 
 @import "core/normalization";         // CSS Resets and Normailization
 @import "core/base";                  // Base-level styles
+
+// -----------------------------------------------------------------------------
+// Helpers
+
+@import "helpers/placeholders";       // Placeholders
+@import "helpers/utilities";          // Utilities
 
 // -----------------------------------------------------------------------------
 // Layout
