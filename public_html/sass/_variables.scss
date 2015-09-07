@@ -84,3 +84,21 @@ $link-color-active           : #000;
 $link-bkg-normal             : #fff;
 $link-bkg-hover              : #fff;
 $link-bkg-active             : #fff;
+
+// -----------------------------------------------------------------------------
+// DRAFT
+// http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/
+// https://github.com/twbs/bootstrap/tree/v4-dev
+
+$gray-dark                   : #373a3c !default;
+
+$body-bg                     : #fff !default;
+$body-color                  : $gray-dark !default;
+
+$font-family-sans-serif      : "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base            : $font-family-sans-serif !default;
+$font-size-root              : 16px !default;
+
+$line-height                 : 1.5 !default;
+
+

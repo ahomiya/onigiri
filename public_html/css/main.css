@@ -417,25 +417,28 @@ th {
   padding: 0;
 }
 
-*,
-*:before,
-*:after {
+html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
-  font-style: normal;
-  font-weight: normal;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
 }
 
 body {
   background-color: #fff;
-  color: #666;
-  line-height: 20px;
+  color: #373a3c;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {

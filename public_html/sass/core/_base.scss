@@ -4,34 +4,38 @@
 // a descendent selector, or a child selector, along with any pseudo-classes.
 // It is defining the default styling for how that element should look in
 // all occurrences on the page.
+
+// Prototype     : Bootstrap
+// Documentation : http://v4-alpha.getbootstrap.com/content/reboot/
+// Component     : https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 // -----------------------------------------------------------------------------
 
-// Defaults
-// Tell the browser to consider border and padding as part of the width of
-// an object rather than as an addition.
-* {
-	&,
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
+// Page defaults
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html {
-	font: {                                      // Default font
-		family: $font-family-base;
-		size: $font-size-base;
-		style: normal;
-		weight: normal;
-	}
-	-webkit-tap-highlight-color: transparent;    // Tapping highlight
-	-webkit-font-smoothing: antialiased;
+  font-size: $font-size-root;
 }
 
 body {
-	background-color: $bkg-color-base;
-	color: $color-base;
-	line-height: $line-height-base;
+  background-color: $body-bg;
+  color: $body-color;
+  font: {
+    family: $font-family-base;
+    size: $font-size-base;
+  }
+  line-height: $line-height;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
 }
 
 // -----------------------------------------------------------------------------
