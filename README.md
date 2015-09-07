@@ -32,3 +32,5 @@ Clone the git repo — `git clone https://github.com/ahomiya/onigiri.git`
 * [Bower](http://bower.io) — a package manager for the web.
 * [Gulp.js](http://gulpjs.com) — a streaming build system.
 * [libSass](http://libsass.org) enchanced.
+
+Last updated : September 7, 2015
