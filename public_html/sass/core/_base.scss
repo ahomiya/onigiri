@@ -39,19 +39,7 @@ body {
 }
 
 // -----------------------------------------------------------------------------
-// Links
-a {
-	color: $link-color-normal;
-	text-decoration: none;
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: underline;
-  }
-  &:active {
-    color: $link-color-active;
-  }
-}
-// -----------------------------------------------------------------------------
+// Typography
 // Text-level semantics
 
 // Headings
@@ -91,24 +79,44 @@ em {
 small { font-size: 100%; }
 
 mark { background-color: transparent; }
+
+// -----------------------------------------------------------------------------
+// Links
+
+a {
+  color: $link-color-normal;
+  text-decoration: none;
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+  &:active {
+    color: $link-color-active;
+  }
+}
+
 // -----------------------------------------------------------------------------
 // Embedded content
+
 img { vertical-align: middle; }
 
 // -----------------------------------------------------------------------------
 // Grouping content
+
 hr {
 
 }
 
 // -----------------------------------------------------------------------------
 // Forms
+
 form {
 
 }
 
 // -----------------------------------------------------------------------------
 // Tables
+
 table {
 	background-color: transparent;
 	max-width: 100%;
@@ -118,6 +126,7 @@ th { text-align: left; }
 
 // -----------------------------------------------------------------------------
 // Pseudo-elements
+
 ::-moz-selection {
   background: $color-selection;
   text-shadow: none;
