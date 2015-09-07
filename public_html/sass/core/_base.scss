@@ -19,7 +19,7 @@
 
 html {
 	font: {                                      // Default font
-		family: $font-style-base;
+		family: $font-family-base;
 		size: $font-size-base;
 		style: normal;
 		weight: normal;
@@ -76,12 +76,12 @@ em {
 
 b,
 strong {
-	font-family: $font-style-bold;
+	font-family: $font-family-default;
 }
 
 i,
 em {
-	font-family: $font-style-italic;
+	font-family: $font-family-default;
 }
 
 small { font-size: 100%; }
@@ -100,7 +100,7 @@ hr {
 // -----------------------------------------------------------------------------
 // Forms
 form {
-	
+
 }
 
 // -----------------------------------------------------------------------------
