@@ -2,7 +2,7 @@
  * Project                            : Onigiri
  * CSS preprocessor                   : SASS
  * CSS authoring frameworks           : Toolkit
- * CSS resets / normalization         : Reset.css, Normalize.css
+ * CSS resets / normalization         : Normalize.css
  * Features detection library         : Modernizr
  * Front-end template                 : Onigiri
  * Design approach                    : Mobile first
@@ -447,74 +447,139 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: normal;
+  margin-bottom: .5rem;
+  margin-top: 0;
 }
 
 p {
-  line-height: normal;
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
-b,
-strong,
-i,
-em {
+abbr[title],
+abbr[data-original-title] {
+  border-bottom: 1px dotted #818a91;
+  cursor: help;
+}
+
+address {
   font-style: normal;
-  font-weight: normal;
+  line-height: inherit;
+  margin-bottom: 1rem;
 }
 
-b,
-strong {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ol,
+ul,
+dl {
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
-i,
-em {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
 }
 
-small {
-  font-size: 100%;
+dt {
+  font-weight: bold;
 }
 
-mark {
-  background-color: transparent;
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
 }
 
 a {
-  color: #666;
+  color: #0275d8;
   text-decoration: none;
 }
 
+a:focus,
 a:hover {
-  color: #000;
+  color: #014c8c;
   text-decoration: underline;
 }
 
-a:active {
-  color: #000;
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+pre {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+figure {
+  margin: 0 0 1rem;
 }
 
 img {
   vertical-align: middle;
 }
 
+[role="button"] {
+  cursor: pointer;
+}
+
 table {
   background-color: transparent;
-  max-width: 100%;
+}
+
+caption {
+  caption-side: bottom;
+  color: #818a91;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  text-align: left;
 }
 
 th {
   text-align: left;
 }
 
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+input,
+button,
+select,
+textarea {
+  line-height: inherit;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+legend {
+  display: block;
+  font-size: 1.5rem;
+  line-height: inherit;
+  margin-bottom: .5rem;
+  padding: 0;
+  width: 100%;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
 }
 
 ::-webkit-input-placeholder {
@@ -553,6 +618,16 @@ input:-ms-input-placeholder {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   opacity: 1;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 .clearfix:after {

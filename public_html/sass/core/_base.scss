@@ -49,100 +49,166 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: normal;
+  margin-bottom: .5rem;
+  margin-top: 0;
 }
 
-// Body text
-p { line-height: normal; }
-
-// Emphasis & misc
-b,
-strong,
-i,
-em {
-	font: {
-		style: normal;
-		weight: normal;
-	}
+// Paragraphs
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
-b,
-strong {
-	font-family: $font-family-default;
+// Abbreviations and acronyms
+abbr[title],
+abbr[data-original-title] {
+  border-bottom: 1px dotted $abbr-border-color;
+  cursor: help;
 }
 
-i,
-em {
-	font-family: $font-family-default;
+address {
+  font-style: normal;
+  line-height: inherit;
+  margin-bottom: 1rem;
 }
 
-small { font-size: 100%; }
+// Lists
+ol,
+ul,
+dl {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
 
-mark { background-color: transparent; }
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
 
 // -----------------------------------------------------------------------------
 // Links
 
 a {
-  color: $link-color-normal;
+  color: $link-color;
   text-decoration: none;
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: underline;
+
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
   }
-  &:active {
-    color: $link-color-active;
+
+  &:focus {
+    @include tab-focus();
   }
 }
 
 // -----------------------------------------------------------------------------
-// Embedded content
+// Code
 
-img { vertical-align: middle; }
-
-// -----------------------------------------------------------------------------
-// Grouping content
-
-hr {
-
+pre {
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
 // -----------------------------------------------------------------------------
-// Forms
+// Figures
 
-form {
+figure {
+  margin: 0 0 1rem;
+}
 
+// -----------------------------------------------------------------------------
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// -----------------------------------------------------------------------------
+// iOS clickable elements
+
+[role="button"] {
+  cursor: pointer;
 }
 
 // -----------------------------------------------------------------------------
 // Tables
 
 table {
-	background-color: transparent;
-	max-width: 100%;
+  background-color: $table-bg;
 }
 
-th { text-align: left; }
+caption {
+  caption-side: bottom;
+  color: $text-muted;
+  padding-bottom: $table-cell-padding;
+  padding-top: $table-cell-padding;
+  text-align: left;
+}
+
+th {
+  text-align: left;
+}
+
+// -----------------------------------------------------------------------------
+// Forms
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  line-height: inherit;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+legend {
+  display: block;
+  font-size: 1.5rem;
+  line-height: inherit;
+  margin-bottom: .5rem;
+  padding: 0;
+  width: 100%;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
 
 // -----------------------------------------------------------------------------
 // Pseudo-elements
 
-::-moz-selection {
-  background: $color-selection;
-  text-shadow: none;
-}
-
-::selection {
-  background: $color-selection;
-  text-shadow: none;
-}
-
-// -----------------------------------------------------------------------------
-// Placeholder
-$placeholder-color-normal   : #666;
-$placeholder-color-error    : red;
-$placeholder-color-disabled : #999;
-
+// Placeholders
 ::-webkit-input-placeholder {                                                     // WebKit
   position: relative;
   top: 2px;                                                                       // iOS 7
@@ -154,3 +220,14 @@ $placeholder-color-disabled : #999;
 :-moz-placeholder           { @include placeholder($placeholder-color-normal); }  // Firefox 18-
 input:-ms-input-placeholder { @include placeholder($placeholder-color-normal); }  // IE10+
 [placeholder].placeholder   { @include placeholder($placeholder-color-normal); }  // IE9
+
+// Selections
+::-moz-selection {
+  background: $color-selection;
+  text-shadow: none;
+}
+
+::selection {
+  background: $color-selection;
+  text-shadow: none;
+}

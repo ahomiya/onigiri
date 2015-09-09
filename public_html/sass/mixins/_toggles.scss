@@ -1,0 +1,24 @@
+// Toggles
+// Used in conjunction with global variables to enable certain theme features.
+
+// Framework  : Bootstrap (v4-dev)
+// Repository : https://github.com/twbs/bootstrap/blob/v4-dev/scss/_mixins.scss
+// -----------------------------------------------------------------------------
+
+@mixin border-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-radius: $radius;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}
+
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    transition: $transition;
+  }
+}

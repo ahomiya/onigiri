@@ -3,7 +3,7 @@
  * Project                            : Onigiri
  * CSS preprocessor                   : SASS
  * CSS authoring frameworks           : Toolkit
- * CSS resets / normalization         : Reset.css, Normalize.css
+ * CSS resets / normalization         : Normalize.css
  * Features detection library         : Modernizr
  * Front-end template                 : Onigiri
  * Design approach                    : Mobile first
@@ -49,6 +49,12 @@
 
 // Utilities
 @import "mixins/global";              // Global
+@import "mixins/toggles";             // Toggles
+@import "mixins/hover";               // Hover
+@import "mixins/tab-focus";           // Tab focus
+
+// Skins
+@import "mixins/border-radius";       // Border radius
 
 // -----------------------------------------------------------------------------
 // Core
