@@ -666,10 +666,6 @@ input:-ms-input-placeholder {
   visibility: hidden;
 }
 
-.readme p {
-  margin-bottom: 15px;
-}
-
 .console {
   border-top: #ccc dotted 1px;
   margin: 15px 0;
