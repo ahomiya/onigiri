@@ -7,10 +7,11 @@
 
 // -----------------------------------------------------------------------------
 // Variables
-var $window                   = $(window),
-    $document                 = $(document),
-    $html                     = $('html'),
-    $body                     = $('body');
+const $window    = $(window);
+const $document  = $(document);
+const $html      = $('html');
+const $body      = $('body');
+
 // -----------------------------------------------------------------------------
 // Functions
 
@@ -34,12 +35,12 @@ $document.ready(function() {
   });
 
   // Existing element
-  $body.exists(function(event) {
+  $body.exists(function() {
     console.log('Body element exists');
   });
 
   // Checking screen type
-  if(Modernizr.touch) {
+  if (Modernizr.touch) {
     console.log('Screen type : Touch');
   } else {
     console.log('Screen type : Standard');
@@ -48,6 +49,7 @@ $document.ready(function() {
   // Log
   console.log('DOM is fully loaded.');
 });
+
 // -----------------------------------------------------------------------------
 // Window - load
 // Specify a function to execute when complete page is fully loaded.
@@ -56,9 +58,10 @@ $window.load(function() {
   // Log
   console.log('Page is fully loaded.');
 });
+
 // -----------------------------------------------------------------------------
 // Window - resize
-$window.on('debouncedresize', function(event) {
+$window.on('debouncedresize', function() {
 
   // Log
   console.log('Window has been resized.');

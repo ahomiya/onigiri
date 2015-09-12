@@ -84,3 +84,63 @@ $link-color-active           : #000;
 $link-bkg-normal             : #fff;
 $link-bkg-hover              : #fff;
 $link-bkg-active             : #fff;
+
+
+// Selection
+$selection-color             : #b3d4fc;
+
+
+// Placeholder
+$placeholder-color-normal    : #666;
+$placeholder-color-error     : red;
+$placeholder-color-disabled  : #999;
+
+// -----------------------------------------------------------------------------
+// DRAFT
+
+// Prototype  : Bootstrap (v4-dev)
+// Info       : http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/
+// Repository : https://github.com/twbs/bootstrap/tree/v4-dev
+
+// Colors
+$gray-dark                   : #373a3c !default;
+$gray                        : #55595c !default;
+$gray-light                  : #818a91 !default;
+$gray-lighter                : #eceeef !default;
+$gray-lightest               : #f7f7f9 !default;
+
+$brand-primary               : #0275d8 !default;
+
+// Options
+$enable-hover-media-query    : false !default;
+
+// Body
+$body-bg                     : #fff !default;
+$body-color                  : $gray-dark !default;
+
+// Links
+$link-color                  : $brand-primary !default;
+$link-hover-color            : darken($link-color, 15%) !default;
+$link-hover-decoration       : underline !default;
+
+// Typography
+$font-family-sans-serif      : "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base            : $font-family-sans-serif !default;
+$font-size-root              : 16px !default;
+
+$line-height                 : 1.5 !default;
+
+$text-muted                  : $gray-light !default;
+
+$abbr-border-color           : $gray-light !default;
+
+// Tables
+$table-cell-padding          : .75rem !default;
+$table-sm-cell-padding       : .3rem !default;
+
+$table-bg                    : transparent !default;
+$table-bg-accent             : #f9f9f9 !default;
+$table-bg-hover              : #f5f5f5 !default;
+$table-bg-active             : $table-bg-hover !default;
+
+$table-border-color          : $gray-lighter !default;

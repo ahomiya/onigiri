@@ -4,50 +4,42 @@
 // a descendent selector, or a child selector, along with any pseudo-classes.
 // It is defining the default styling for how that element should look in
 // all occurrences on the page.
+
+// Prototype     : Bootstrap
+// Documentation : http://v4-alpha.getbootstrap.com/content/reboot/
+// Component     : https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss
 // -----------------------------------------------------------------------------
 
-// Defaults
-// Tell the browser to consider border and padding as part of the width of
-// an object rather than as an addition.
-* {
-	&,
-	&:before,
-	&:after {
-		box-sizing: border-box;
-	}
+// Page defaults
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html {
-	font: {                                      // Default font
-		family: $font-family-base;
-		size: $font-size-base;
-		style: normal;
-		weight: normal;
-	}
-	-webkit-tap-highlight-color: transparent;    // Tapping highlight
-	-webkit-font-smoothing: antialiased;
+  font-size: $font-size-root;
 }
 
 body {
-	background-color: $bkg-color-base;
-	color: $color-base;
-	line-height: $line-height-base;
+  background-color: $body-bg;
+  color: $body-color;
+  font: {
+    family: $font-family-base;
+    size: $font-size-base;
+  }
+  line-height: $line-height;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-font-smoothing: antialiased;
 }
 
 // -----------------------------------------------------------------------------
-// Links
-a {
-	color: $link-color-normal;
-	text-decoration: none;
-  &:hover {
-    color: $link-color-hover;
-    text-decoration: underline;
-  }
-  &:active {
-    color: $link-color-active;
-  }
-}
-// -----------------------------------------------------------------------------
+// Typography
 // Text-level semantics
 
 // Headings
@@ -57,79 +49,166 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: normal;
+  margin-bottom: .5rem;
+  margin-top: 0;
 }
 
-// Body text
-p { line-height: normal; }
-
-// Emphasis & misc
-b,
-strong,
-i,
-em {
-	font: {
-		style: normal;
-		weight: normal;
-	}
+// Paragraphs
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
 }
 
-b,
-strong {
-	font-family: $font-family-default;
+// Abbreviations and acronyms
+abbr[title],
+abbr[data-original-title] {
+  border-bottom: 1px dotted $abbr-border-color;
+  cursor: help;
 }
 
-i,
-em {
-	font-family: $font-family-default;
+address {
+  font-style: normal;
+  line-height: inherit;
+  margin-bottom: 1rem;
 }
 
-small { font-size: 100%; }
+// Lists
+ol,
+ul,
+dl {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
 
-mark { background-color: transparent; }
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: .5rem;
+  margin-left: 0;
+}
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
 // -----------------------------------------------------------------------------
-// Embedded content
-img { vertical-align: middle; }
+// Links
 
-// -----------------------------------------------------------------------------
-// Grouping content
-hr {
+a {
+  color: $link-color;
+  text-decoration: none;
 
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
 }
 
 // -----------------------------------------------------------------------------
-// Forms
-form {
+// Code
 
+pre {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Figures
+
+figure {
+  margin: 0 0 1rem;
+}
+
+// -----------------------------------------------------------------------------
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// -----------------------------------------------------------------------------
+// iOS clickable elements
+
+[role="button"] {
+  cursor: pointer;
 }
 
 // -----------------------------------------------------------------------------
 // Tables
+
 table {
-	background-color: transparent;
-	max-width: 100%;
+  background-color: $table-bg;
 }
 
-th { text-align: left; }
+caption {
+  caption-side: bottom;
+  color: $text-muted;
+  padding-bottom: $table-cell-padding;
+  padding-top: $table-cell-padding;
+  text-align: left;
+}
+
+th {
+  text-align: left;
+}
+
+// -----------------------------------------------------------------------------
+// Forms
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+input,
+button,
+select,
+textarea {
+  line-height: inherit;
+  margin: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+legend {
+  display: block;
+  font-size: 1.5rem;
+  line-height: inherit;
+  margin-bottom: .5rem;
+  padding: 0;
+  width: 100%;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
 
 // -----------------------------------------------------------------------------
 // Pseudo-elements
-::-moz-selection {
-  background: $color-selection;
-  text-shadow: none;
-}
 
-::selection {
-  background: $color-selection;
-  text-shadow: none;
-}
-
-// -----------------------------------------------------------------------------
-// Placeholder
-$placeholder-color-normal   : #666;
-$placeholder-color-error    : red;
-$placeholder-color-disabled : #999;
-
+// Placeholders
 ::-webkit-input-placeholder {                                                     // WebKit
   position: relative;
   top: 2px;                                                                       // iOS 7
@@ -141,3 +220,14 @@ $placeholder-color-disabled : #999;
 :-moz-placeholder           { @include placeholder($placeholder-color-normal); }  // Firefox 18-
 input:-ms-input-placeholder { @include placeholder($placeholder-color-normal); }  // IE10+
 [placeholder].placeholder   { @include placeholder($placeholder-color-normal); }  // IE9
+
+// Selections
+::-moz-selection {
+  background: $color-selection;
+  text-shadow: none;
+}
+
+::selection {
+  background: $color-selection;
+  text-shadow: none;
+}

@@ -2,8 +2,12 @@
 // A handful of helpful utility classes to add certain behaviors to elements.
 // -----------------------------------------------------------------------------
 
-// Clearfix: contain floats
+// Floats
+
 .clearfix { @include clearfix; }
+
+// -----------------------------------------------------------------------------
+// Visibility
 
 // Hide visually and from screen readers: h5bp.com/u
 .hidden {
