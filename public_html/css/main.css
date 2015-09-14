@@ -676,4 +676,8 @@ input:-ms-input-placeholder {
   font-family: Font-Bold;
 }
 
-/*# sourceMappingURL=../sourcemaps/main.css.map */
+.test {
+  color: green;
+}
+
+/*# sourceMappingURL=../../resources/sourcemaps/main.css.map */

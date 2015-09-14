@@ -22,6 +22,8 @@ var project         = 'onigiri',                              // Project name
     localDomain     = '.ahomiya.com',                         // Local domain
     localUrl        = 'local.' + project + localDomain,       // Local URL
 
+    localResources  = './resources',                          // Local resources
+
     componentPackage= './components/package',                 // Package components
     componentCustom = './components/custom';                  // Custom components
 
@@ -33,8 +35,20 @@ var browserReload   = browserSync.reload;                     // Browser reloadi
 // Globs
 
 var toolkit         = '/toolkit/dist',                        // Toolkit framework
-    sourceFiles     = localHost + '/sourcefiles',             // Source files
-    sourceMaps      = '../sourcemaps',                        // Source maps
+    sourceMaps      = '../../resources/sourcemaps',           // Source maps
+    resources       = {
+      sass: {
+        defaults    : localResources + '/sass/**/*.scss'      // SASS
+      },
+      js: {
+        defaults    : localResources + '/js',                 // JS - defaults
+        main        : localResources + '/js/main.js',         // JS - main
+        vendor      : localResources + '/js/vendor'           // JS - vendor
+      },
+      images: {
+        defaults    : localResources + '/img/**/*'            // Images
+      }
+    },
     root            = {
       html : {
         template    : localHost + '/**/*.html'                // HTML template
@@ -48,17 +62,8 @@ var toolkit         = '/toolkit/dist',                        // Toolkit framewo
         main        : localHost + '/js/main.js',              // JS - main
         vendor      : localHost + '/js/vendor'                // JS - vendor
       },
-      sass: {
-        common      : localHost + '/sass/**/*.scss',          // SASS - common
-        vendor      : localHost + '/sass/vendor'              // SASS - vendor
-      },
       images: {
-        defaults    : localHost + '/img',                     // Images - defaults
-        source      : sourceFiles + '/img/**/*'               // Images - source
-      },
-      source: {
-        js          : sourceFiles + '/js/**/*',               // Source - JavaScript
-        images      : sourceFiles + '/img/**/*'               // Source - images
+        defaults    : localHost + '/img',                     // Images
       }
     };
 
@@ -131,7 +136,7 @@ gulp.task('build:js.plugins', function() {
 // SASS
 gulp.task('compile:sass', function() {
   return gulp
-    .src(root.sass.common)                                    // Source
+    .src(resources.sass.defaults)                             // Source
     .pipe(sourcemaps.init())                                  // Initializing source maps
     .pipe(sass({                                              // Compling
       indentedSyntax   : false,
@@ -155,7 +160,7 @@ gulp.task('compile:sass', function() {
 // Minify PNG, JPEG, GIF and SVG images
 gulp.task('optimize:images', function() {
   return gulp
-    .src(root.images.source)                                  // Source
+    .src(resources.images.defaults)                           // Source
     .pipe(imagemin({                                          // Optimizing
       progressive : true,
       svgoPlugins : [{removeViewBox: false}],
@@ -207,7 +212,7 @@ gulp.task('browser-synchronize', function() {
 // Watching file changes
 gulp.task('watch:changes', function() {
   // Compiling
-  gulp.watch(root.sass.common, ['compile:sass']);             // SASS
+  gulp.watch(resources.sass.defaults, ['compile:sass']);      // SASS
 
   // Reloading changes in the browser
   gulp.watch(root.html.template, browserReload);              // HTML
