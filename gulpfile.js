@@ -4,7 +4,6 @@ var gulp            = require('gulp'),                        // Gulp
     sourcemaps      = require('gulp-sourcemaps'),             // Source maps
     autoprefixer    = require('gulp-autoprefixer'),           // Prefix CSS
     sass            = require('gulp-sass'),                   // Sass
-    rename          = require('gulp-rename'),                 // Rename files
     concat          = require('gulp-concat'),                 // Concatinate files
     uglify          = require('gulp-uglify'),                 // Minify files
     htmlhint        = require('gulp-htmlhint'),               // HTML validation
