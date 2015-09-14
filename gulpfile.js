@@ -129,7 +129,7 @@ gulp.task('build:js.plugins', function() {
     .pipe(gulp.dest(resources.js.vendor));                    // Ouput
 });
 
-gulp.task('build:js.export', function() {
+gulp.task('build:js.all', function() {
   return gulp
     .src(resources.js.defaults)                               // Source
     .pipe(gulp.dest(root.js.defaults));                       // Ouput
@@ -254,7 +254,7 @@ gulp.task('build:js',
     'build:js.features',                                      // Features
     'build:js.polyfills',                                     // Polyfills
     'build:js.plugins',                                       // Plugins
-    'build:js.export'                                         // Export
+    'build:js.all'                                            // All JavaScript files
   ]
 );
 
