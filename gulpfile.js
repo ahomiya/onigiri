@@ -41,9 +41,9 @@ var toolkit         = '/toolkit/dist',                        // Toolkit framewo
         defaults    : localResources + '/sass/**/*.scss'      // SASS
       },
       js: {
-        defaults    : localResources + '/js',                 // JS - defaults
+        defaults    : localResources + '/js/**/*.js',         // JS - defaults
         main        : localResources + '/js/main.js',         // JS - main
-        vendor      : localResources + '/js/vendor'           // JS - vendor
+        vendor      : localResources + '/js/vendor/**/*.js'   // JS - vendor
       },
       images: {
         defaults    : localResources + '/img/**/*'            // Images
@@ -103,7 +103,7 @@ gulp.task('build:js.core', function() {
     .src(components.jsLibraries.core)                         // Source
     .pipe(concat('libraries.core.js'))                        // Concatenating
     // .pipe(uglify())                                        // Minifying
-    .pipe(gulp.dest(root.js.vendor));                         // Output
+    .pipe(gulp.dest(resources.js.vendor));                    // Output
 });
 
 gulp.task('build:js.features', function() {
@@ -111,7 +111,7 @@ gulp.task('build:js.features', function() {
     .src(components.jsLibraries.features)                     // Source
     .pipe(concat('libraries.features.js'))                    // Concatenating
     // .pipe(uglify())                                        // Minifying
-    .pipe(gulp.dest(root.js.vendor));                         // Output
+    .pipe(gulp.dest(resources.js.vendor));                    // Output
 });
 
 gulp.task('build:js.polyfills', function() {
@@ -119,7 +119,7 @@ gulp.task('build:js.polyfills', function() {
     .src(components.jsLibraries.polyfills)                    // Source
     .pipe(concat('libraries.polyfills.js'))                   // Concatenating
     // .pipe(uglify())                                        // Minifying
-    .pipe(gulp.dest(root.js.vendor));                         // Output
+    .pipe(gulp.dest(resources.js.vendor));                    // Output
 });
 
 gulp.task('build:js.plugins', function() {
@@ -127,11 +127,30 @@ gulp.task('build:js.plugins', function() {
     .src(components.jsLibraries.plugins)                      // Source
     .pipe(concat('libraries.plugins.js'))                     // Concatenating
     // .pipe(uglify())                                        // Minifying
-    .pipe(gulp.dest(root.js.vendor));                         // Ouput
+    .pipe(gulp.dest(resources.js.vendor));                    // Ouput
+});
+
+gulp.task('build:js.export', function() {
+  return gulp
+    .src(resources.js.defaults)                               // Source
+    .pipe(gulp.dest(root.js.defaults));                       // Ouput
+});
+
+gulp.task('build:images', function() {
+  return gulp
+    .src(resources.images.defaults)                           // Source
+    .pipe(gulp.dest(root.images.defaults));                   // Ouput
 });
 
 // -----------------------------------------------------------------------------
 // Compiling tasks
+
+// JavaScript
+gulp.task('compile:js', function() {
+  return gulp
+    .src(resources.js.main)                                   // Source
+    .pipe(gulp.dest(root.js.defaults));                       // Ouput
+});
 
 // SASS
 gulp.task('compile:sass', function() {
@@ -212,6 +231,7 @@ gulp.task('browser-synchronize', function() {
 // Watching file changes
 gulp.task('watch:changes', function() {
   // Compiling
+  gulp.watch(resources.js.defaults, ['compile:js']);          // JavaScript
   gulp.watch(resources.sass.defaults, ['compile:sass']);      // SASS
 
   // Reloading changes in the browser
@@ -234,14 +254,16 @@ gulp.task('build:js',
     'build:js.core',                                          // Core
     'build:js.features',                                      // Features
     'build:js.polyfills',                                     // Polyfills
-    'build:js.plugins'                                        // Plugins
+    'build:js.plugins',                                       // Plugins
+    'build:js.export'                                         // Export
   ]
 );
 
 // Build : All
 gulp.task('build',
   [
-    'build:js'                                                // JavaScript libraries
+    'build:js',                                               // JavaScript
+    'build:images'                                            // Images
   ]
 );
 
