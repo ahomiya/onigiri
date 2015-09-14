@@ -34,7 +34,7 @@ var browserReload   = browserSync.reload;                     // Browser reloadi
 // Globs
 
 var toolkit         = '/toolkit/dist',                        // Toolkit framework
-    sourceMaps      = '../../resources/sourcemaps',           // Source maps
+    sourceMaps      = '../css',                               // Source maps
     resources       = {
       sass: {
         defaults    : localResources + '/sass/**/*.scss'      // SASS
