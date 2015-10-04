@@ -588,36 +588,41 @@ input[type="search"] {
   top: 0;
   color: #666;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   opacity: 1;
+  text-transform: none;
 }
 
 ::-moz-placeholder {
   color: #666;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   opacity: 1;
+  text-transform: none;
 }
 
 :-moz-placeholder {
   color: #666;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   opacity: 1;
+  text-transform: none;
 }
 
 input:-ms-input-placeholder {
   color: #666;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   opacity: 1;
+  text-transform: none;
 }
 
 [placeholder].placeholder {
   color: #666;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 11px;
+  font-size: 16px;
   opacity: 1;
+  text-transform: none;
 }
 
 ::-moz-selection {

@@ -1,0 +1,12 @@
+// Placeholder
+// -----------------------------------------------------------------------------
+
+@mixin placeholder($color: $placeholder-color-normal, $font-family: $placeholder-font-family, $font-size: $placeholder-font-size, $text-transform: $placeholder-text-transform) {
+  color: $color;
+  font: {
+    family: $font-family;
+    size: $font-size;
+  }
+  opacity: 1;
+  text-transform: $text-transform;
+}
