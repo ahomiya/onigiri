@@ -1,17 +1,17 @@
 // Plugin dependencies
 var gulp            = require('gulp'),                        // Gulp
     notify          = require('gulp-notify'),                 // Notification
-    sourcemaps      = require('gulp-sourcemaps'),             // Source maps
-    autoprefixer    = require('gulp-autoprefixer'),           // Prefix CSS
+    browserSync     = require('browser-sync'),                // Live reload & Browser syncing
     sass            = require('gulp-sass'),                   // Sass
+    autoprefixer    = require('gulp-autoprefixer'),           // Prefix CSS
+    sourcemaps      = require('gulp-sourcemaps'),             // Source maps
     concat          = require('gulp-concat'),                 // Concatinate files
     uglify          = require('gulp-uglify'),                 // Minify files
     htmlhint        = require('gulp-htmlhint'),               // HTML validation
     csslint         = require('gulp-csslint'),                // CSS code quality
     jshint          = require('gulp-jshint'),                 // JavaScript code quality
     imagemin        = require('gulp-imagemin'),               // Minify images
-    pngquant        = require('imagemin-pngquant'),           // PNG optimizer
-    browserSync     = require('browser-sync');                // Live reload & Browser syncing
+    pngquant        = require('imagemin-pngquant');           // PNG optimizer
 
 // -----------------------------------------------------------------------------
 // Configurations
@@ -34,7 +34,7 @@ var browserReload   = browserSync.reload;                     // Browser reloadi
 // Globs
 
 var toolkit         = '/toolkit/dist',                        // Toolkit framework
-    sourceMaps      = '../css',                               // Source maps
+    sourcemapsCSS   = '../css',                               // CSS source maps
     resources       = {
       sass: {
         defaults    : localResources + '/sass/**/*.scss'      // SASS
@@ -166,7 +166,7 @@ gulp.task('compile:sass', function() {
       cascade          : false
     }))
     .pipe(browserSync.stream())                               // Injecting CSS
-    .pipe(sourcemaps.write(sourceMaps))                       // Writing source maps
+    .pipe(sourcemaps.write(sourcemapsCSS))                    // Writing source maps
     .pipe(gulp.dest(root.css.defaults))                       // Output
     .pipe(notify('Sass Compiled & Prefixed'));                // Notification
 });
