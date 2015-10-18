@@ -1,6 +1,6 @@
 {
   "name": "ahomiya.com",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "authors": [
     "ahomiya.com <hello@ahomiya.com>"
   ],
@@ -13,7 +13,7 @@
   ],
   "main": [],
   "dependencies": {
-    "jquery": "2",
+    "jquery": "2.1.4",
     "normalize.css": "3.0.3",
     "enquire": "2.1.2",
     "matchMedia": "0.2.0",
@@ -22,6 +22,6 @@
     "smartresize": "https://github.com/louisremi/jquery-smartresize.git"
   },
   "resolutions": {
-    "jquery": "2"
+    "jquery": "2.1.4"
   }
 }
