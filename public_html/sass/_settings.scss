@@ -54,6 +54,11 @@ $os-windows                  : ".OS-Windows &";
 $os-ios                      : ".OS-iOS &";
 $os-android                  : ".OS-Android &";
 
+$windows-chrome              : ".OS-Windows.Browser-Chrome &";
+$windows-safari              : ".OS-Windows.Browser-Safari &";
+$windows-firefox             : ".OS-Windows.Browser-Firefox &";
+$windows-edge                : ".Browser-Edge &";
+
 
 // Browsers
 $browser-chrome              : ".Browser-Chrome &";
@@ -73,11 +78,16 @@ $device-mouse                : ".no-touch &";
 $device-touch                : ".touch &";
 $device-tablet               : ".Device-Tablet &";
 $device-mobile               : ".Device-Mobile &";
+
 $device-iphone               : ".Device-iPhone &";
 $device-ipad                 : ".Device-iPad &";
 $device-ipod                 : ".Device-iPod &";
 $device-s4                   : ".Device-S4 &";
 $device-s5                   : ".Device-S5 &";
+
+$device-desktop              : ".Device-Desktop &";
+$device-desktop-hover        : ".Device-Desktop &:hover";
+$device-mobile-hover         : ".Device-Mobile &:active";
 
 
 // Ratios
