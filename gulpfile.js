@@ -97,7 +97,6 @@ gulp.task('build:js.core', function() {
   return gulp
     .src(components.jsLibraries.core)                         // Source
     .pipe(concat('libraries.core.js'))                        // Concatenating
-    // .pipe(uglify())                                        // Minifying
     .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
@@ -105,7 +104,6 @@ gulp.task('build:js.features', function() {
   return gulp
     .src(components.jsLibraries.features)                     // Source
     .pipe(concat('libraries.features.js'))                    // Concatenating
-    // .pipe(uglify())                                        // Minifying
     .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
@@ -113,7 +111,6 @@ gulp.task('build:js.polyfills', function() {
   return gulp
     .src(components.jsLibraries.polyfills)                    // Source
     .pipe(concat('libraries.polyfills.js'))                   // Concatenating
-    // .pipe(uglify())                                        // Minifying
     .pipe(gulp.dest(root.js.vendor));                         // Output
 });
 
@@ -121,7 +118,6 @@ gulp.task('build:js.plugins', function() {
   return gulp
     .src(components.jsLibraries.plugins)                      // Source
     .pipe(concat('libraries.plugins.js'))                     // Concatenating
-    // .pipe(uglify())                                        // Minifying
     .pipe(gulp.dest(root.js.vendor));                         // Ouput
 });
 
