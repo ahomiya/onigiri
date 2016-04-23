@@ -1,7 +1,4 @@
 {
-  // CODING STYLE
-  // https://git.buzzwoo.de/buzzwoo/guideline/tree/master/javascript
-
   // always use camelCase for variable names
   "camelcase": true,
   // always put semicolons in
