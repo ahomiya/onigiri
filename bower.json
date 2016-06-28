@@ -1,5 +1,5 @@
 {
-  "name": "ahomiya.com",
+  "name": "Onigiri",
   "version": "0.0.1",
   "authors": [
     "ahomiya.com <hello@ahomiya.com>"
@@ -13,7 +13,7 @@
   ],
   "main": [],
   "dependencies": {
-    "jquery": "2.2.3",
+    "jquery": "3.0.0",
     "normalize.css": "4.1.1",
     "enquire": "2.1.2",
     "matchMedia": "0.3.0",
@@ -22,6 +22,6 @@
     "smartresize": "https://github.com/louisremi/jquery-smartresize.git"
   },
   "resolutions": {
-    "jquery": "2.2.3"
+    "jquery": "3.0.0"
   }
 }
