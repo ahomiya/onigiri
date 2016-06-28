@@ -49,8 +49,8 @@ var toolkit         = '/toolkit/dist',                        // Toolkit framewo
         vendor      : localHost + '/js/vendor'                // JS - vendor
       },
       sass: {
-        common      : localHost + '/sass/**/*.scss',          // SASS - common
-        vendor      : localHost + '/sass/vendor'              // SASS - vendor
+        common      : localHost + '/scss/**/*.scss',          // SASS - common
+        vendor      : localHost + '/scss/vendor'              // SASS - vendor
       },
       images: {
         defaults    : localHost + '/img',                     // Images - defaults
