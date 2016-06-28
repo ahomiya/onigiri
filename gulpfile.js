@@ -1,3 +1,10 @@
+/**
+ * Gulp.js file
+ * Project             : Onigiri
+ * Package manager     : Bower
+ * Developers          : ahomiya.com
+ */
+
 // Plugin dependencies
 var gulp            = require('gulp'),                        // Gulp
     notify          = require('gulp-notify'),                 // Notification
