@@ -12,6 +12,7 @@ $path-font                   : "fonts";
 
 // URLs
 @function reference-url($path-reference) {
+  $reference: "../";
   @if ($path-reference == relative) { $reference: "../"; }
   @if ($path-reference == absolute) { $reference: "/"; }
   @return $reference;

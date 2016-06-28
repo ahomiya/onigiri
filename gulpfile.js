@@ -48,9 +48,9 @@ var toolkit         = '/toolkit/dist',                        // Toolkit framewo
         main        : localHost + '/js/main.js',              // JS - main
         vendor      : localHost + '/js/vendor'                // JS - vendor
       },
-      sass: {
-        common      : localHost + '/sass/**/*.scss',          // SASS - common
-        vendor      : localHost + '/sass/vendor'              // SASS - vendor
+      scss: {
+        common      : localHost + '/scss/**/*.scss',          // SASS - common
+        vendor      : localHost + '/scss/vendor'              // SASS - vendor
       },
       images: {
         defaults    : localHost + '/img',                     // Images - defaults
@@ -127,7 +127,7 @@ gulp.task('build:js.plugins', function() {
 // SASS
 gulp.task('compile:sass', function() {
   return gulp
-    .src(root.sass.common)                                    // Source
+    .src(root.scss.common)                                    // Source
     .pipe(sourcemaps.init())                                  // Initializing source maps
     .pipe(sass({                                              // Compling
       indentedSyntax   : false,
@@ -203,7 +203,7 @@ gulp.task('browser-synchronize', function() {
 // Watching file changes
 gulp.task('watch:changes', function() {
   // Compiling
-  gulp.watch(root.sass.common, ['compile:sass']);             // SASS
+  gulp.watch(root.scss.common, ['compile:sass']);             // SASS
 
   // Reloading changes in the browser
   gulp.watch(root.html.template, browserReload);              // HTML
