@@ -1,0 +1,69 @@
+doctype html
+html(lang="en")
+  head
+    title pageTitle2b
+    meta(description='description')
+    script(type='text/javascript').
+      if (foo) {
+         bar(1 + 5)
+      }
+  body
+    h4 text #[a(href='#') link] other text
+    p paragraph
+      a(href='#') link
+      | new line
+    - var title = "On Dogs: Man's Best2 Friend";
+    - var author = "enlore";
+    - var theGreat = "<span>escape!</span>";
+
+    h1= title
+    p Written with love by #{author}
+    p This will be safe: #{theGreat}
+
+    ul
+      each val in [1, 2, 3, 4, 5]
+        li= val
+
+    include ./includes/_mixins.pug
+    ul
+      +pet('cat')
+      +pet('dog')
+      +pet('pig')
+
+    div: img.hidden(src='/img/dummy.png', alt='dummy2')
+    | Plain text can include <strong>html</strong>
+    p
+      | Plain text can include <strong>html</strong>
+    //- Headline
+    include ./includes/_head.pug
+    div(class='container', data-id='id-2', disabled, style={color: '#fff'}).
+      text
+    h1 Pug3b - node template engine
+    .container4 text
+      h4.heading4 headline
+      #common-div text
+    div
+      span(style={color: 'red', background: 'green'})
+        div.inner text
+    p
+      a(href='google.com') Google
+      span Yahoo
+    p
+      a(class='button', href='google.com') Google
+    #container.col
+      input(
+        type='checkbox'
+        name='agreement'
+        checked
+      )
+      if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
+      // comments
+      //- hidden comment
+      p.
+        Jade2 is a terse and simple
+        templating language with a
+        strong focus on performance
+        and powerful features.

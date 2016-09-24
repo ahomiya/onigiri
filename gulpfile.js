@@ -1,8 +1,10 @@
 // Plugin dependencies
 var gulp            = require('gulp'),                        // Gulp
     notify          = require('gulp-notify'),                 // Notification
+    plumber         = require('gulp-plumber'),                // Prevent pipe breaking
     sourcemaps      = require('gulp-sourcemaps'),             // Source maps
     autoprefixer    = require('gulp-autoprefixer'),           // Prefix CSS
+    pug             = require('gulp-pug'),                    // Template engine
     sass            = require('gulp-sass'),                   // Sass
     rename          = require('gulp-rename'),                 // Rename files
     concat          = require('gulp-concat'),                 // Concatinate files
@@ -36,10 +38,14 @@ var toolkit         = '/toolkit/dist',                        // Toolkit framewo
     sourceFiles     = localHost + '/sourcefiles',             // Source files
     sourceMaps      = '../sourcemaps',                        // Source maps
     root            = {
-      html : {
-        template    : localHost + '/**/*.html'                // HTML template
+      html: {
+        template    : localHost + '/**/*.html',               // HTML template
+        build       : localHost                               // Build
       },
-      css : {
+      pug: {
+        template    : localHost + '/pug/**/!(_)*.pug'         // Pug template
+      },
+      css: {
         defaults    : localHost + '/css',                     // CSS - defaults
         main        : localHost + '/css/main.css'             // CSS - main
       },
@@ -49,7 +55,7 @@ var toolkit         = '/toolkit/dist',                        // Toolkit framewo
         vendor      : localHost + '/js/vendor'                // JS - vendor
       },
       sass: {
-        common      : localHost + '/sass/**/*.scss',          // SASS - common
+        defaults    : localHost + '/sass/**/*.scss',          // SASS - defaults
         vendor      : localHost + '/sass/vendor'              // SASS - vendor
       },
       images: {
@@ -127,9 +133,9 @@ gulp.task('build:js.plugins', function() {
 // SASS
 gulp.task('compile:sass', function() {
   return gulp
-    .src(root.sass.common)                                    // Source
+    .src(root.sass.defaults)                                  // Source
     .pipe(sourcemaps.init())                                  // Initializing source maps
-    .pipe(sass({                                              // Compling
+    .pipe(sass({                                              // Compiling
       indentedSyntax   : false,
       errLogToConsole  : true,
       outputStyle      : 'expanded'
@@ -142,6 +148,16 @@ gulp.task('compile:sass', function() {
     .pipe(sourcemaps.write(sourceMaps))                       // Writing source maps
     .pipe(gulp.dest(root.css.defaults))                       // Output
     .pipe(notify('Sass Compiled & Prefixed'));                // Notification
+});
+
+// Pug
+gulp.task('compile:template', function() {
+  return gulp.src(root.pug.template)
+    .pipe(plumber())                                          // Errors handler
+    .pipe(pug({                                               // Compiling
+      pretty: true
+    }))
+    .pipe(gulp.dest(root.html.build));                        // Output
 });
 
 // -----------------------------------------------------------------------------
@@ -203,7 +219,8 @@ gulp.task('browser-synchronize', function() {
 // Watching file changes
 gulp.task('watch:changes', function() {
   // Compiling
-  gulp.watch(root.sass.common, ['compile:sass']);             // SASS
+  gulp.watch(root.sass.defaults, ['compile:sass']);           // SASS
+  gulp.watch(root.pug.template, ['compile:template']);        // Template
 
   // Reloading changes in the browser
   gulp.watch(root.html.template, browserReload);              // HTML
